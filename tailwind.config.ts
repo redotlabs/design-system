@@ -1,5 +1,4 @@
-import { typography } from '@/tokens/typography';
-import { colors } from './src/tokens/color';
+import { typography, colors } from '@/tokens';
 import type { Config } from 'tailwindcss';
 
 export default {

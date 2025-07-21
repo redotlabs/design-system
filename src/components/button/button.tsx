@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { type ComponentProps } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/classnames';
 
@@ -33,7 +33,7 @@ function Button({
   variant,
   size,
   ...props
-}: React.ComponentProps<'button'> & ButtonVariants) {
+}: ComponentProps<'button'> & ButtonVariants) {
   return (
     <button
       type="button"

@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Tempoland Button Component',
+        component: 'Redot Button Component',
       },
     },
   },

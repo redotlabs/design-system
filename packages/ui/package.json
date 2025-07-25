@@ -1,0 +1,71 @@
+{
+  "name": "@redot/ui",
+  "version": "1.0.0",
+  "description": "UI components for Redot design system",
+  "type": "module",
+  "scripts": {
+    "build": "tsup && cp src/index.css dist/index.css",
+    "build:fast": "tsup --no-dts && cp src/index.css dist/index.css",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./only-components": {
+      "require": {
+        "types": "./dist/only-components.d.cts",
+        "default": "./dist/only-components.cjs"
+      },
+      "import": {
+        "types": "./dist/only-components.d.ts",
+        "default": "./dist/only-components.js"
+      }
+    },
+    "./css": "./dist/index.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "author": "redot",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redotlabs/design-system.git",
+    "directory": "packages/ui"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "@vitejs/plugin-react": "^4.7.0",
+    "prop-types": "^15.8.1"
+  },
+  "dependencies": {
+    "@redot/themes": "workspace:*",
+    "@redot/tokens": "workspace:*",
+    "@redot/utils": "workspace:*",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/react": "^19.1.8",
+    "class-variance-authority": "^0.7.1",
+    "react": "^19.1.0",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.6"
+  },
+  "peerDependencies": {
+    "@redot/themes": ">=1.0.0",
+    "@redot/tokens": ">=1.0.0",
+    "@redot/utils": ">=1.0.0",
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  }
+}

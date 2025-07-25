@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["packages/*"]
     },
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,

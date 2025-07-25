@@ -1,0 +1,50 @@
+{
+  "name": "@redot/sdui-renderer",
+  "version": "1.0.0",
+  "description": "SDUI Renderer for Redot design system",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "build:fast": "tsup --no-dts",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "author": "redot",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redotlabs/design-system.git",
+    "directory": "packages/sdui-renderer"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "@vitejs/plugin-react": "^4.7.0",
+    "prop-types": "^15.8.1"
+  },
+  "dependencies": {
+    "@redot/ui": "workspace:*"
+  },
+  "peerDependencies": {
+    "@redot/ui": ">=1.0.0",
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  }
+}

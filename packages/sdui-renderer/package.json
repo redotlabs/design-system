@@ -36,7 +36,6 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.15",
-    "@vitejs/plugin-react": "^4.7.0",
     "prop-types": "^15.8.1"
   },
   "dependencies": {

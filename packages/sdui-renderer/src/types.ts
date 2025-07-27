@@ -1,8 +1,10 @@
 import type { HTMLElementType } from 'react';
+import { COMPONENT_MAP } from './const';
 
+export type ComponentType = keyof typeof COMPONENT_MAP | HTMLElementType;
 export interface ContentBlock {
   id: string;
-  component: HTMLElementType;
+  component: ComponentType;
   props?: {
     className?: string;
     [key: string]: unknown;

@@ -1,0 +1,38 @@
+{
+  "name": "@redot/themes",
+  "version": "1.0.0",
+  "description": "Themes for design system",
+  "type": "module",
+  "scripts": {
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "sideEffects": false,
+  "author": "redot",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redotlabs/design-system.git",
+    "directory": "packages/themes"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "clean-package": "^2.2.0"
+  },
+  "dependencies": {
+    "@redot/tokens": "workspace:*"
+  },
+  "peerDependencies": {
+    "@redot/tokens": ">=1.0.0"
+  },
+  "clean-package": "../../clean-package.config.json"
+}

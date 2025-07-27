@@ -1,0 +1,25 @@
+{
+  "name": "@redot/tokens",
+  "version": "1.0.0",
+  "description": "Tokens for Redot design system",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "sideEffects": false,
+  "author": "redot",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redotlabs/design-system.git",
+    "directory": "packages/tokens"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15"
+  }
+}

@@ -3,3 +3,6 @@ storybook-static
 node_modules
 
 .DS_Store
+dist
+*.tsbuildinfo
+.turbo

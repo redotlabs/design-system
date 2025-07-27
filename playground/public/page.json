@@ -1,0 +1,293 @@
+{
+  "title": "Redot - 자동화된 홈페이지 리디자인 플랫폼",
+  "description": "낡은 홈페이지를 새롭게, AI가 대신합니다.",
+  "contents": [
+    {
+      "id": "header",
+      "component": "header",
+      "props": {
+        "className": "sticky top-0 z-50 bg-white/80 backdrop-blur border-b"
+      },
+      "children": [
+        {
+          "id": "nav",
+          "component": "nav",
+          "props": {
+            "className": "max-w-7xl mx-auto flex justify-between items-center px-6 py-4"
+          },
+          "children": [
+            {
+              "id": "logo",
+              "component": "div",
+              "props": {
+                "className": "text-xl font-bold text-sky-600"
+              },
+              "children": "Redot"
+            },
+            {
+              "id": "nav-menu",
+              "component": "ul",
+              "props": {
+                "className": "flex gap-6 text-sm text-gray-700 font-medium"
+              },
+              "children": [
+                { "id": "menu-1", "component": "li", "children": "홈" },
+                { "id": "menu-2", "component": "li", "children": "기능" },
+                { "id": "menu-3", "component": "li", "children": "사례" },
+                { "id": "menu-4", "component": "li", "children": "문의" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "component": "section",
+      "props": {
+        "className": "bg-gradient-to-b from-white via-blue-50 to-white py-28 text-center px-6"
+      },
+      "children": [
+        {
+          "id": "hero-title",
+          "component": "h1",
+          "props": {
+            "className": "text-5xl font-bold text-gray-900 tracking-tight max-w-3xl mx-auto leading-tight"
+          },
+          "children": "홈페이지 리디자인,\nAI가 대신합니다"
+        },
+        {
+          "id": "hero-sub",
+          "component": "p",
+          "props": {
+            "className": "mt-6 text-lg text-gray-600 max-w-xl mx-auto"
+          },
+          "children": "Redot은 구식 홈페이지를 자동으로 진단하고, 세련된 웹사이트로 리디자인해주는 플랫폼입니다."
+        },
+        {
+          "id": "hero-button",
+          "component": "Button",
+          "props": {
+            "variant": "contained",
+            "size": "lg",
+            "className": "mt-8 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition"
+          },
+          "children": "무료 진단 시작하기"
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "component": "section",
+      "props": {
+        "className": "py-24 bg-white"
+      },
+      "children": [
+        {
+          "id": "features-grid",
+          "component": "div",
+          "props": {
+            "className": "max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-6"
+          },
+          "children": [
+            {
+              "id": "feature-ai",
+              "component": "div",
+              "children": [
+                {
+                  "id": "feature-ai-title",
+                  "component": "h3",
+                  "props": {
+                    "className": "text-xl font-semibold text-gray-900"
+                  },
+                  "children": "AI 구조 분석"
+                },
+                {
+                  "id": "feature-ai-desc",
+                  "component": "p",
+                  "props": {
+                    "className": "mt-2 text-sm text-gray-600"
+                  },
+                  "children": "기존 홈페이지의 디자인, 콘텐츠, 정보 구조를 자동 분석합니다."
+                }
+              ]
+            },
+            {
+              "id": "feature-template",
+              "component": "div",
+              "children": [
+                {
+                  "id": "feature-template-title",
+                  "component": "h3",
+                  "props": {
+                    "className": "text-xl font-semibold text-gray-900"
+                  },
+                  "children": "최적 템플릿 추천"
+                },
+                {
+                  "id": "feature-template-desc",
+                  "component": "p",
+                  "props": {
+                    "className": "mt-2 text-sm text-gray-600"
+                  },
+                  "children": "업종별·용도별 템플릿 중 가장 적합한 구조를 제안해요."
+                }
+              ]
+            },
+            {
+              "id": "feature-deploy",
+              "component": "div",
+              "children": [
+                {
+                  "id": "feature-deploy-title",
+                  "component": "h3",
+                  "props": {
+                    "className": "text-xl font-semibold text-gray-900"
+                  },
+                  "children": "1클릭 배포"
+                },
+                {
+                  "id": "feature-deploy-desc",
+                  "component": "p",
+                  "props": {
+                    "className": "mt-2 text-sm text-gray-600"
+                  },
+                  "children": "리디자인된 사이트를 바로 배포하고 운영하세요."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "component": "section",
+      "props": {
+        "className": "py-24 bg-slate-50"
+      },
+      "children": [
+        {
+          "id": "comparison-title",
+          "component": "h2",
+          "props": {
+            "className": "text-3xl font-bold text-center text-gray-900"
+          },
+          "children": "리디자인 전과 후를 비교해보세요"
+        },
+        {
+          "id": "comparison-image",
+          "component": "div",
+          "props": {
+            "className": "mt-10 bg-gray-200 h-72 rounded-xl w-11/12 mx-auto shadow-inner"
+          }
+        }
+      ]
+    },
+    {
+      "id": "testimonials",
+      "component": "section",
+      "props": {
+        "className": "py-24 bg-white"
+      },
+      "children": [
+        {
+          "id": "testimonial-title",
+          "component": "h2",
+          "props": {
+            "className": "text-3xl font-bold text-center text-gray-900"
+          },
+          "children": "Redot 고객들의 이야기"
+        },
+        {
+          "id": "testimonial-list",
+          "component": "div",
+          "props": {
+            "className": "mt-10 max-w-5xl mx-auto grid sm:grid-cols-2 gap-8 px-6"
+          },
+          "children": [
+            {
+              "id": "testimonial-1",
+              "component": "blockquote",
+              "props": {
+                "className": "bg-gray-50 p-6 rounded-xl shadow text-gray-700"
+              },
+              "children": "10년 된 홈페이지를 단 하루 만에 리디자인했어요. 고객 반응도 훨씬 좋아졌습니다. – 김이사, 광고회사 대표"
+            },
+            {
+              "id": "testimonial-2",
+              "component": "blockquote",
+              "props": {
+                "className": "bg-gray-50 p-6 rounded-xl shadow text-gray-700"
+              },
+              "children": "디자인은 몰라도 됩니다. 그냥 도메인만 입력했는데 완성된 홈페이지가 나왔어요. – 박팀장, 스타트업 운영자"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "component": "section",
+      "props": {
+        "className": "py-24 bg-gradient-to-tr from-sky-500 to-indigo-500 text-white text-center"
+      },
+      "children": [
+        {
+          "id": "cta-title",
+          "component": "h2",
+          "props": {
+            "className": "text-3xl font-bold"
+          },
+          "children": "지금 바로 Redot을 시작해보세요"
+        },
+        {
+          "id": "cta-subtitle",
+          "component": "p",
+          "props": {
+            "className": "mt-4 text-white/90"
+          },
+          "children": "무료 진단으로 현재 홈페이지 문제를 바로 파악해드립니다."
+        },
+        {
+          "id": "cta-button",
+          "component": "Button",
+          "props": {
+            "variant": "outlined",
+            "size": "md",
+            "className": "mt-6 border border-white text-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition"
+          },
+          "children": "진단 신청하기"
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "component": "footer",
+      "props": {
+        "className": "bg-white border-t py-12 px-6 text-sm text-gray-500"
+      },
+      "children": [
+        {
+          "id": "footer-content",
+          "component": "div",
+          "props": {
+            "className": "max-w-6xl mx-auto text-center space-y-2"
+          },
+          "children": [
+            {
+              "id": "footer-links",
+              "component": "p",
+              "children": "© 2025 Redot | 서비스 이용약관 | 개인정보 처리방침"
+            },
+            {
+              "id": "footer-contact",
+              "component": "p",
+              "children": "Contact: support@redot.me"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

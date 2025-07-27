@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsup",
     "build:fast": "tsup --no-dts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
   "exports": {
     ".": {
@@ -34,16 +36,18 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "devDependencies": {
-    "@types/node": "^24.0.15",
-    "prop-types": "^15.8.1"
-  },
   "dependencies": {
     "@redot/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "prop-types": "^15.8.1",
+    "clean-package": "^2.2.0"
   },
   "peerDependencies": {
     "@redot/ui": ">=1.0.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
-  }
+  },
+  "clean-package": "../../clean-package.config.json"
 }

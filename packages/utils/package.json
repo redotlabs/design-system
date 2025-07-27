@@ -6,7 +6,9 @@
   "scripts": {
     "build": "tsup",
     "build:fast": "tsup --no-dts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
   "exports": {
     ".": {
@@ -35,7 +37,8 @@
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "@types/node": "^24.0.15"
+    "@types/node": "^24.0.15",
+    "clean-package": "^2.2.0"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -44,5 +47,6 @@
   "peerDependencies": {
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
-  }
+  },
+  "clean-package": "../../clean-package.config.json"
 }

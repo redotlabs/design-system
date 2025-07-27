@@ -21,11 +21,5 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.15"
-  },
-  "dependencies": {
-    "@redot/themes": "workspace:*"
-  },
-  "peerDependencies": {
-    "@redot/themes": ">=1.0.0"
   }
 }

@@ -12,7 +12,9 @@
     "typecheck": "turbo typecheck --filter=@redot/*",
     "clean": "turbo clean --filter=@redot/*",
     "publish:github": "turbo build --filter=@redot/* && pnpm -r --filter @redot/* publish --no-git-checks",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "quality:check": "pnpm lint && pnpm format:check"
   },
   "keywords": [],
   "author": "redot",
@@ -36,9 +38,11 @@
     "@vitejs/plugin-react": "^4.7.0",
     "clean-package": "^2.2.0",
     "eslint": "^9.30.1",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "prettier": "^3.6.2",
     "react": "^19.1.0",
     "storybook": "^9.0.17",
     "tailwindcss": "^4.1.11",

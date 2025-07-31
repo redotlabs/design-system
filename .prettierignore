@@ -1,0 +1,20 @@
+# Build output
+dist/
+build/
+storybook-static/
+
+# Dependencies
+node_modules/
+.pnpm/
+
+# Tooling
+.turbo/
+coverage/
+*.tsbuildinfo
+
+# Logs and temp files
+*.log
+.DS_Store
+
+# Lock file
+pnpm-lock.yaml

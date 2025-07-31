@@ -4,13 +4,14 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { globalIgnores } from 'eslint/config'
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default tseslint.config([
-globalIgnores([
-    'dist',
-    'node_modules', 
-    'storybook-static', 
- ]),  
+  globalIgnores([
+      'dist',
+      'node_modules', 
+      'storybook-static', 
+  ]),  
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -27,4 +28,5 @@ globalIgnores([
       '@typescript-eslint/no-explicit-any': 'off',
     }
   },
+  eslintConfigPrettier
 ])

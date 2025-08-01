@@ -15,7 +15,9 @@
     "lint": "eslint .",
     "format:check": "prettier --check .",
     "quality:check": "pnpm lint && pnpm format:check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "generate": "plop",
+    "generate:ui-component": "plop ui-component"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

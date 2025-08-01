@@ -1,0 +1,85 @@
+import { {{pascalCase name}} } from './{{kebabCase name}}';
+import { Meta, StoryObj } from '@storybook/react-vite';
+
+const meta: Meta<typeof {{pascalCase name}}> = {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: 'Redot {{description}} Component',
+      },
+    },
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: {
+        type: 'inline-radio',
+      },
+      defaultValue: 'default',
+      description: 'The variant of the {{pascalCase name}}',
+      table: {
+        type: { summary: 'default' },
+        defaultValue: { summary: 'default' },
+      },
+      options: ['default'],
+    },
+    size: {
+      control: {
+        type: 'inline-radio',
+      },
+      defaultValue: 'md',
+      table: {
+        type: { summary: 'md' },
+        defaultValue: { summary: 'md' },
+      },
+      description: 'The size of the {{pascalCase name}}',
+      options: ['md'],
+    },
+    children: {
+      control: {
+        type: 'text',
+      },
+      description: 'The content of the {{pascalCase name}}',
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof {{pascalCase name}}>;
+
+export const Default: Story = {
+  args: {
+    children: '{{pascalCase name}} Component',
+    variant: 'default',
+    size: 'md',
+  },
+};
+
+export const Variants: Story = {
+  args: {
+    children: '{{pascalCase name}} Component',
+    variant: 'default',
+    size: 'md',
+  },
+  render: (args) => (
+    <div className="flex items-center gap-4">
+      <{{pascalCase name}} {...args} variant="default" />
+    </div>
+  ),
+};
+
+export const Sizes: Story = {
+  args: {
+    children: '{{pascalCase name}} Component',
+    variant: 'default',
+    size: 'md',
+  },
+  render: (args) => (
+    <div className="flex items-center gap-4">
+      <{{pascalCase name}} {...args} size="md" />
+    </div>
+  ),
+};

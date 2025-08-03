@@ -2,7 +2,7 @@ import { type ComponentProps } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@redot/utils';
 
-const {{camelCase name}}Variants = cva(
+const {{camelCase componentName}}Variants = cva(
   '',
   {
     variants: {
@@ -20,26 +20,26 @@ const {{camelCase name}}Variants = cva(
   }
 );
 
-type {{pascalCase name}}Variants = VariantProps<typeof {{camelCase name}}Variants>;
+type {{pascalCase componentName}}Variants = VariantProps<typeof {{camelCase componentName}}Variants>;
 
-interface {{pascalCase name}}Props extends ComponentProps<'div'>, {{pascalCase name}}Variants {
+interface {{pascalCase componentName}}Props extends ComponentProps<'div'>, {{pascalCase componentName}}Variants {
   /**
    * {{description}}
    */
   children?: React.ReactNode;
 }
 
-function {{pascalCase name}}({
+function {{pascalCase componentName}}({
   className,
   variant,
   size,
   children,
   ...props
-}: {{pascalCase name}}Props) {
+}: {{pascalCase componentName}}Props) {
   return (
     <div
-      data-slot="{{kebabCase name}}"
-      className={cn({{camelCase name}}Variants({ variant, size, className }))}
+      data-slot="{{kebabCase componentName}}"
+      className={cn({{camelCase componentName}}Variants({ variant, size, className }))}
       {...props}
     >
       {children}
@@ -47,5 +47,5 @@ function {{pascalCase name}}({
   );
 }
 
-export { {{pascalCase name}}, {{camelCase name}}Variants };
-export type { {{pascalCase name}}Variants, {{pascalCase name}}Props };
+export { {{pascalCase componentName}}, {{camelCase componentName}}Variants };
+export type { {{pascalCase componentName}}Variants, {{pascalCase componentName}}Props };

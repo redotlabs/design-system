@@ -1,9 +1,9 @@
-import { {{pascalCase name}} } from './{{kebabCase name}}';
+import { {{pascalCase componentName}} } from './{{kebabCase componentName}}';
 import { Meta, StoryObj } from '@storybook/react-vite';
 
-const meta: Meta<typeof {{pascalCase name}}> = {
-  title: 'Components/{{pascalCase name}}',
-  component: {{pascalCase name}},
+const meta: Meta<typeof {{pascalCase componentName}}> = {
+  title: 'Components/{{pascalCase componentName}}',
+  component: {{pascalCase componentName}},
   parameters: {
     layout: 'centered',
     docs: {
@@ -19,7 +19,7 @@ const meta: Meta<typeof {{pascalCase name}}> = {
         type: 'inline-radio',
       },
       defaultValue: 'default',
-      description: 'The variant of the {{pascalCase name}}',
+      description: 'The variant of the {{pascalCase componentName}}',
       table: {
         type: { summary: 'default' },
         defaultValue: { summary: 'default' },
@@ -35,24 +35,24 @@ const meta: Meta<typeof {{pascalCase name}}> = {
         type: { summary: 'md' },
         defaultValue: { summary: 'md' },
       },
-      description: 'The size of the {{pascalCase name}}',
+      description: 'The size of the {{pascalCase componentName}}',
       options: ['md'],
     },
     children: {
       control: {
         type: 'text',
       },
-      description: 'The content of the {{pascalCase name}}',
+      description: 'The content of the {{pascalCase componentName}}',
     },
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof {{pascalCase name}}>;
+type Story = StoryObj<typeof {{pascalCase componentName}}>;
 
 export const Default: Story = {
   args: {
-    children: '{{pascalCase name}} Component',
+    children: '{{pascalCase componentName}} Component',
     variant: 'default',
     size: 'md',
   },
@@ -60,26 +60,26 @@ export const Default: Story = {
 
 export const Variants: Story = {
   args: {
-    children: '{{pascalCase name}} Component',
+    children: '{{pascalCase componentName}} Component',
     variant: 'default',
     size: 'md',
   },
   render: (args) => (
     <div className="flex items-center gap-4">
-      <{{pascalCase name}} {...args} variant="default" />
+      <{{pascalCase componentName}} {...args} variant="default" />
     </div>
   ),
 };
 
 export const Sizes: Story = {
   args: {
-    children: '{{pascalCase name}} Component',
+    children: '{{pascalCase componentName}} Component',
     variant: 'default',
     size: 'md',
   },
   render: (args) => (
     <div className="flex items-center gap-4">
-      <{{pascalCase name}} {...args} size="md" />
+      <{{pascalCase componentName}} {...args} size="md" />
     </div>
   ),
 };

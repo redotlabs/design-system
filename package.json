@@ -17,7 +17,7 @@
     "quality:check": "pnpm lint && pnpm format:check",
     "prepare": "husky",
     "generate": "plop",
-    "generate:ui-component": "plop ui-component"
+    "generate:ui": "plop ui"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

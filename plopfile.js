@@ -18,27 +18,27 @@ export default function (plop) {
     actions: [
       {
         type: 'add',
-        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.tsx', // 여기!
+        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.tsx', 
         templateFile: 'plop-templates/component.tsx.hbs'
       },
       {
         type: 'add',
-        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.test.tsx', // 여기!
+        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.test.tsx', 
         templateFile: 'plop-templates/component.test.tsx.hbs'
       },
       {
         type: 'add',
-        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.stories.tsx', // 여기!
+        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.stories.tsx', 
         templateFile: 'plop-templates/component.stories.tsx.hbs'
       },
       {
         type: 'add',
-        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.schema.ts', // 여기!
+        path: 'packages/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.schema.ts', 
         templateFile: 'plop-templates/component.schema.ts.hbs'
       },
       {
         type: 'add',
-        path: 'packages/ui/src/{{kebabCase componentName}}/index.ts', // 여기!
+        path: 'packages/ui/src/{{kebabCase componentName}}/index.ts',
         templateFile: 'plop-templates/index.ts.hbs'
       }
     ]

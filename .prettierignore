@@ -21,3 +21,6 @@ pnpm-lock.yaml
 
 # eslint config
 eslint.config.js
+
+plopfile.js
+plop-templates/

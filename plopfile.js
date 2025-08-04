@@ -16,13 +16,13 @@ export default function (plop) {
       }
     ],
     actions: [
-  {
-    type: "addMany",
-    templateFiles: `plop-templates/ui/**`,
-    destination: `packages/ui/src/{{kebabCase componentName}}`,
-    base: `plop-templates/ui`,
-    abortOnFail: true,
-  }
-]
+      {
+        type: "addMany",
+        templateFiles: `plop-templates/ui/**`,
+        destination: `packages/ui/src/{{kebabCase componentName}}`,
+        base: `plop-templates/ui`,
+        abortOnFail: true,
+      }
+    ]
   });
 }

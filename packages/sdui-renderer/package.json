@@ -1,6 +1,6 @@
 {
   "name": "@redot/sdui-renderer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "SDUI Renderer for Redot design system",
   "type": "module",
   "scripts": {
@@ -45,7 +45,7 @@
     "clean-package": "^2.2.0"
   },
   "peerDependencies": {
-    "@redot/ui": ">=1.0.0",
+    "@redot/ui": ">=2.0.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },

@@ -41,12 +41,21 @@ jobs:
       - name: Build packages
         run: pnpm build
 
+      - name: Setup npm authentication
+        run: |
+          echo "@redot:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.REDOT_PAT }}" >> ~/.npmrc
+          echo "Current .npmrc contents:"
+          cat ~/.npmrc
+
       - name: Create and publish versions
         uses: changesets/action@v1
         with:
           commit: "chore: update versions"
           title: "chore: update versions"
           publish: pnpm ci:publish
+          setupGitUser: false
         env:
           GITHUB_TOKEN: ${{ secrets.REDOT_PAT }}
           NPM_TOKEN: ${{ secrets.REDOT_PAT }}
+          NODE_AUTH_TOKEN: ${{ secrets.REDOT_PAT }}

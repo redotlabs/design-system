@@ -29,10 +29,10 @@
     "clean-package": "^2.2.0"
   },
   "dependencies": {
-    "@redot/tokens": "workspace:*"
+    "@redotlabs/tokens": "workspace:*"
   },
   "peerDependencies": {
-    "@redot/tokens": ">=2.0.0"
+    "@redotlabs/tokens": ">=2.0.0"
   },
   "clean-package": "../../clean-package.config.json"
 }

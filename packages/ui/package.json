@@ -1,6 +1,6 @@
 {
   "name": "@redot/ui",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "UI components for Redot design system",
   "type": "module",
   "scripts": {
@@ -66,9 +66,9 @@
     "clean-package": "^2.2.0"
   },
   "peerDependencies": {
-    "@redot/themes": ">=1.0.0",
-    "@redot/tokens": ">=1.0.0",
-    "@redot/utils": ">=1.0.0",
+    "@redot/themes": ">=2.0.0",
+    "@redot/tokens": ">=2.0.0",
+    "@redot/utils": ">=2.0.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },

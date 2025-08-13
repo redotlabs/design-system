@@ -1,4 +1,4 @@
-import { colors, typography } from '@redot/tokens';
+import { colors, typography } from '@redotlabs/tokens';
 import type { Config } from 'tailwindcss';
 
 export default {

@@ -1,4 +1,4 @@
-import * as Components from '@redot/ui/only-components';
+import * as Components from '@redotlabs/ui/only-components';
 
 /**
  * @description

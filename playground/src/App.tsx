@@ -1,6 +1,6 @@
 import getPage from './services/get-page';
 import { useEffect, useState } from 'react';
-import { SDUIRenderer } from '@redot/sdui-renderer';
+import { SDUIRenderer } from '@redotlabs/sdui-renderer';
 
 function App() {
   const [page, setPage] = useState<any>(null);

@@ -1,6 +1,6 @@
 import { type ComponentProps } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@redot/utils';
+import { cn } from '@redotlabs/utils';
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap border border-gray-200 rounded-md active:scale-97 transition-all cursor-pointer disabled:pointer-events-none disabled:cursor-not-allowed shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',

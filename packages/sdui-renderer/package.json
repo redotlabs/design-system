@@ -1,5 +1,5 @@
 {
-  "name": "@redot/sdui-renderer",
+  "name": "@redotlabs/sdui-renderer",
   "version": "2.0.0",
   "description": "SDUI Renderer for Redot design system",
   "type": "module",

@@ -43,7 +43,7 @@ jobs:
 
       - name: Setup npm authentication
         run: |
-          echo "@redot:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "@redotlabs:registry=https://npm.pkg.github.com" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.REDOT_PAT }}" >> ~/.npmrc
           echo "Current .npmrc contents:"
           cat ~/.npmrc

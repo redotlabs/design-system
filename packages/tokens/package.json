@@ -1,5 +1,5 @@
 {
-  "name": "@redot/tokens",
+  "name": "@redotlabs/tokens",
   "version": "2.0.0",
   "description": "Tokens for Redot design system",
   "exports": {

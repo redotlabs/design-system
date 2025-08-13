@@ -1,5 +1,5 @@
 {
-  "name": "@redot/ui",
+  "name": "@redotlabs/ui",
   "version": "2.0.0",
   "description": "UI components for Redot design system",
   "type": "module",

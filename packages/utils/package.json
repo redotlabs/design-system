@@ -1,5 +1,5 @@
 {
-  "name": "@redot/utils",
+  "name": "@redotlabs/utils",
   "version": "2.0.0",
   "description": "Utils for design system",
   "type": "module",

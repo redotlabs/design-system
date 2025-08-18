@@ -4,15 +4,27 @@
   "description": "Themes for design system",
   "type": "module",
   "scripts": {
+    "build": "tsup",
+    "build:fast": "tsup --no-dts",
+    "typecheck": "tsc --noEmit",
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "types": "./src/index.ts"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "author": "redot",
   "license": "ISC",

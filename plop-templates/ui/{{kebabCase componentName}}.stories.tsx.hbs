@@ -2,6 +2,8 @@ import { {{pascalCase componentName}} } from './{{kebabCase componentName}}';
 import { {{camelCase componentName}}VariantsOptions } from './{{kebabCase componentName}}.variants';
 import { Meta } from '@storybook/react-vite';
 
+const { variants, defaultVariants } = {{camelCase componentName}}VariantsOptions;
+
 const meta: Meta<typeof {{pascalCase componentName}}> = {
   title: 'Components/{{pascalCase componentName}}',
   component: {{pascalCase componentName}},
@@ -19,33 +21,31 @@ const meta: Meta<typeof {{pascalCase componentName}}> = {
       control: {
         type: 'inline-radio',
       },
-      defaultValue: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
+      defaultValue: defaultVariants.variant,
       description: 'The variant of the {{pascalCase componentName}}',
       table: {
         type: {
-          summary: Object.keys({{camelCase componentName}}VariantsOptions.variants.variant).join(
-            ' | '
-          ),
+          summary: Object.keys(variants.variant).join(' | '),
         },
         defaultValue: {
-          summary: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
+          summary: defaultVariants.variant,
         },
       },
-      options: Object.keys({{camelCase componentName}}VariantsOptions.variants.variant),
+      options: Object.keys(variants.variant),
     },
     size: {
       control: {
         type: 'inline-radio',
       },
-      defaultValue: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
+      defaultValue: defaultVariants.size,
       table: {
         type: {
-          summary: Object.keys({{camelCase componentName}}VariantsOptions.variants.size).join(' | '),
+          summary: Object.keys(variants.size).join(' | '),
         },
-        defaultValue: { summary: {{camelCase componentName}}VariantsOptions.defaultVariants.size },
+        defaultValue: { summary: defaultVariants.size },
       },
       description: 'The size of the {{pascalCase componentName}}',
-      options: Object.keys({{camelCase componentName}}VariantsOptions.variants.size),
+      options: Object.keys(variants.size),
     },
     children: {
       control: {
@@ -63,16 +63,16 @@ export default meta;
 export const Default = {
   args: {
     children: '{{pascalCase componentName}} Component',
-    variant: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
-    size: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
+    variant: defaultVariants.variant,
+    size: defaultVariants.size,
   },
 };
 
 export const Variants = {
   args: {
     children: '{{pascalCase componentName}} Component',
-    variant: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
-    size: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
+    variant: defaultVariants.variant,
+    size: defaultVariants.size,
   },
   render: (args) => (
     <div className="flex items-center gap-4">
@@ -85,8 +85,8 @@ export const Variants = {
 export const Sizes = {
   args: {
     children: '{{pascalCase componentName}} Component',
-    variant: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
-    size: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
+    variant: defaultVariants.variant,
+    size: defaultVariants.size,
   },
   render: (args) => (
     <div className="flex items-center gap-4">

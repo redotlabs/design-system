@@ -1,5 +1,6 @@
 import { {{pascalCase componentName}} } from './{{kebabCase componentName}}';
-import { Meta, StoryObj } from '@storybook/react-vite';
+import { {{camelCase componentName}}VariantsOptions } from './{{kebabCase componentName}}.variants';
+import { Meta } from '@storybook/react-vite';
 
 const meta: Meta<typeof {{pascalCase componentName}}> = {
   title: 'Components/{{pascalCase componentName}}',
@@ -18,25 +19,33 @@ const meta: Meta<typeof {{pascalCase componentName}}> = {
       control: {
         type: 'inline-radio',
       },
-      defaultValue: 'default',
+      defaultValue: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
       description: 'The variant of the {{pascalCase componentName}}',
       table: {
-        type: { summary: 'default' },
-        defaultValue: { summary: 'default' },
+        type: {
+          summary: Object.keys({{camelCase componentName}}VariantsOptions.variants.variant).join(
+            ' | '
+          ),
+        },
+        defaultValue: {
+          summary: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
+        },
       },
-      options: ['default'],
+      options: Object.keys({{camelCase componentName}}VariantsOptions.variants.variant),
     },
     size: {
       control: {
         type: 'inline-radio',
       },
-      defaultValue: 'md',
+      defaultValue: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
       table: {
-        type: { summary: 'md' },
-        defaultValue: { summary: 'md' },
+        type: {
+          summary: Object.keys({{camelCase componentName}}VariantsOptions.variants.size).join(' | '),
+        },
+        defaultValue: { summary: {{camelCase componentName}}VariantsOptions.defaultVariants.size },
       },
       description: 'The size of the {{pascalCase componentName}}',
-      options: ['md'],
+      options: Object.keys({{camelCase componentName}}VariantsOptions.variants.size),
     },
     children: {
       control: {
@@ -45,41 +54,44 @@ const meta: Meta<typeof {{pascalCase componentName}}> = {
       description: 'The content of the {{pascalCase componentName}}',
     },
   },
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  // args: { onClick: fn() },
 };
 
 export default meta;
-type Story = StoryObj<typeof {{pascalCase componentName}}>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     children: '{{pascalCase componentName}} Component',
-    variant: 'default',
-    size: 'md',
+    variant: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
+    size: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
   },
 };
 
-export const Variants: Story = {
+export const Variants = {
   args: {
     children: '{{pascalCase componentName}} Component',
-    variant: 'default',
-    size: 'md',
+    variant: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
+    size: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
   },
   render: (args) => (
     <div className="flex items-center gap-4">
-      <{{pascalCase componentName}} {...args} variant="default" />
+      <{{pascalCase componentName}} {...args} />
+      {/* Add more variants here when they are defined */}
     </div>
   ),
 };
 
-export const Sizes: Story = {
+export const Sizes = {
   args: {
     children: '{{pascalCase componentName}} Component',
-    variant: 'default',
-    size: 'md',
+    variant: {{camelCase componentName}}VariantsOptions.defaultVariants.variant,
+    size: {{camelCase componentName}}VariantsOptions.defaultVariants.size,
   },
   render: (args) => (
     <div className="flex items-center gap-4">
-      <{{pascalCase componentName}} {...args} size="md" />
+      <{{pascalCase componentName}} {...args} />
+      {/* Add more sizes here when they are defined */}
     </div>
   ),
 };

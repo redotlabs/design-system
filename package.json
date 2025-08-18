@@ -22,7 +22,9 @@
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "ci:publish": "pnpm publish -r",
-    "release": "pnpm build && pnpm changeset:version && pnpm install && pnpm ci:publish"
+    "release": "pnpm build && pnpm changeset:version && pnpm install && pnpm ci:publish",
+    "upload-database": "node scripts/upload-database.js",
+    "publish:upload": "pnpm build && pnpm upload-database"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

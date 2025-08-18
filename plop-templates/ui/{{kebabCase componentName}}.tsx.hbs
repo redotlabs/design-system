@@ -1,24 +1,8 @@
 import { type ComponentProps } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { type VariantProps } from 'class-variance-authority';
 import { cn } from '@redotlabs/utils';
+import { {{camelCase componentName}}Variants } from '@/ui/src/{{kebabCase componentName}}/{{kebabCase componentName}}.variants';
 
-const {{camelCase componentName}}Variants = cva(
-  '',
-  {
-    variants: {
-      variant: {
-        default: '',
-      },
-      size: {
-        md: '',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md',
-    },
-  }
-);
 
 type {{pascalCase componentName}}Variants = VariantProps<typeof {{camelCase componentName}}Variants>;
 

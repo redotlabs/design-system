@@ -1,2 +1,2 @@
 export * from './button';
-export * from './button.schema';
+export * from './button.variants';

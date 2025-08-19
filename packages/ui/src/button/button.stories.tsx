@@ -1,4 +1,5 @@
 import { Button } from './button';
+import { buttonVariantsOptions } from './button.variants';
 import { Meta } from '@storybook/react-vite';
 
 const meta: Meta<typeof Button> = {
@@ -18,25 +19,33 @@ const meta: Meta<typeof Button> = {
       control: {
         type: 'inline-radio',
       },
-      defaultValue: 'contained',
+      defaultValue: buttonVariantsOptions.defaultVariants.variant,
       description: 'The variant of the button',
       table: {
-        type: { summary: 'contained | outlined | text' },
-        defaultValue: { summary: 'contained' },
+        type: {
+          summary: Object.keys(buttonVariantsOptions.variants.variant).join(
+            ' | '
+          ),
+        },
+        defaultValue: {
+          summary: buttonVariantsOptions.defaultVariants.variant,
+        },
       },
-      options: ['contained', 'outlined', 'text'],
+      options: Object.keys(buttonVariantsOptions.variants.variant),
     },
     size: {
       control: {
         type: 'inline-radio',
       },
-      defaultValue: 'md',
+      defaultValue: buttonVariantsOptions.defaultVariants.size,
       table: {
-        type: { summary: 'sm | md | lg' },
-        defaultValue: { summary: 'md' },
+        type: {
+          summary: Object.keys(buttonVariantsOptions.variants.size).join(' | '),
+        },
+        defaultValue: { summary: buttonVariantsOptions.defaultVariants.size },
       },
       description: 'The size of the button',
-      options: ['sm', 'md', 'lg'],
+      options: Object.keys(buttonVariantsOptions.variants.size),
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -48,16 +57,16 @@ export default meta;
 export const Default = {
   args: {
     children: 'Click Me',
-    variant: 'contained',
-    size: 'md',
+    variant: buttonVariantsOptions.defaultVariants.variant,
+    size: buttonVariantsOptions.defaultVariants.size,
   },
 };
 
 export const Variants = {
   args: {
     children: 'Click Me',
-    variant: 'contained',
-    size: 'md',
+    variant: buttonVariantsOptions.defaultVariants.variant,
+    size: buttonVariantsOptions.defaultVariants.size,
   },
   render: (args) => (
     <div className="flex items-center gap-4">
@@ -71,8 +80,8 @@ export const Variants = {
 export const Sizes = {
   args: {
     children: 'Click Me',
-    variant: 'contained',
-    size: 'md',
+    variant: buttonVariantsOptions.defaultVariants.variant,
+    size: buttonVariantsOptions.defaultVariants.size,
   },
   render: (args) => (
     <div className="flex items-center gap-4">

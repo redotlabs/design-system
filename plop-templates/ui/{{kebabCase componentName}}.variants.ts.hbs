@@ -1,0 +1,27 @@
+import { cva } from 'class-variance-authority';
+
+export const {{camelCase componentName}}VariantsOptions = {
+  base: '',
+  
+  variants: {
+    variant: {
+      default: '',
+    },
+    size: {
+      md: '',
+    },
+  },
+  
+  defaultVariants: {
+    variant: 'default' as const,
+    size: 'md' as const,
+  },
+} as const;
+
+export const {{camelCase componentName}}Variants = cva(
+  {{camelCase componentName}}VariantsOptions.base,
+  {
+    variants: {{camelCase componentName}}VariantsOptions.variants,
+    defaultVariants: {{camelCase componentName}}VariantsOptions.defaultVariants,
+  }
+);

@@ -23,8 +23,10 @@
     "changeset:version": "changeset version",
     "ci:publish": "pnpm publish -r",
     "release": "pnpm build && pnpm changeset:version && pnpm install && pnpm ci:publish",
-    "upload-database": "node scripts/upload-database.js",
-    "publish:upload": "pnpm build && pnpm upload-database"
+    "upload-database:dev": "NODE_ENV=development node scripts/upload-database.js",
+    "upload-database:prod": "NODE_ENV=production node scripts/upload-database.js",
+    "publish:upload:dev": "pnpm build && pnpm upload-database:dev",
+    "publish:upload:prod": "pnpm build && pnpm upload-database:prod"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

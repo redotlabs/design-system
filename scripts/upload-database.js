@@ -5,20 +5,15 @@ import * as Themes from '@redotlabs/themes';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-const CONFIG = {
-  test: {
-    uploadUrl: 'https://server.ryxxn.com/redot/ai/api/v1/design-system/upload',
-    resultUrl: 'https://d1uglncwbgsd7b.cloudfront.net/ui-test',
-  },
-  production: {
-    uploadUrl: 'https://server.ryxxn.com/redot/ai/api/v1/design-system/upload',
-    resultUrl: 'https://d1uglncwbgsd7b.cloudfront.net/ui',
-  },
-};
+const isProduction = process.env.NODE_ENV === 'production';
 
-const ENVIRONMENT =
-  process.env.NODE_ENV === 'production' ? 'production' : 'test';
-const { uploadUrl: API_URL, resultUrl: RESULT_BASE_URL } = CONFIG[ENVIRONMENT];
+const BASE_URL = isProduction
+  ? '' // TODO: add production domain
+  : 'https://server.ryxxn.com/redot/ai';
+
+const RESULT_URL = isProduction
+  ? 'https://d1uglncwbgsd7b.cloudfront.net/ui'
+  : 'https://d1uglncwbgsd7b.cloudfront.net/ui-test';
 
 function getVersion() {
   try {
@@ -73,7 +68,7 @@ function convertToJson(data) {
 
 async function uploadToAPI(data) {
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(`${BASE_URL}/api/v1/design-system/upload`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -133,7 +128,7 @@ async function main() {
     await uploadToAPI(designSystemData);
     console.log('🎉 Design system uploaded successfully!');
     console.log(
-      `📍 Check result at: ${RESULT_BASE_URL}/${designSystemData.version}.json`
+      `📍 Check result at: ${RESULT_URL}/${designSystemData.version}.json`
     );
   } catch (error) {
     console.error('💥 Upload process failed');

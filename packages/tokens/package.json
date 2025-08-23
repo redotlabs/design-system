@@ -9,6 +9,7 @@
   "name": "@redotlabs/tokens",
   "version": "1.0.0",
   "description": "Tokens for Redot design system",
+  "type": "module",
   "exports": {
     ".": {
       "require": {

@@ -28,37 +28,32 @@ function extractVariantOptions(variantsOptions) {
 }
 
 function convertToJson(data) {
-  return Object.entries(data)
-    .filter(([key]) => {
-      const excludeKeys = ['default', 'module.exports', '__esModule'];
-      return !excludeKeys.includes(key);
-    })
-    .map(([key, value]) => {
-      if (typeof value === 'object' && value !== null) {
-        const result = { name: key };
+  return Object.entries(data).map(([key, value]) => {
+    if (typeof value === 'object' && value !== null) {
+      const result = { name: key };
 
-        const subEntries = Object.entries(value);
-        let hasNestedObjects = false;
-
-        subEntries.forEach(([subKey, subValue]) => {
-          if (typeof subValue === 'object' && subValue !== null) {
-            result[subKey] = Object.keys(subValue);
-            hasNestedObjects = true;
-          }
-        });
-
-        if (!hasNestedObjects) {
-          result.value = Object.keys(value);
+      const entries = Object.entries(value);
+      const processedValues = entries.map(([subKey, subValue]) => {
+        if (typeof subValue === 'object' && subValue !== null) {
+          return {
+            [subKey]: Object.keys(subValue),
+          };
+        } else {
+          return {
+            [subKey]: 'Single value',
+          };
         }
+      });
 
-        return result;
-      }
+      result.value = processedValues;
+      return result;
+    }
 
-      return {
-        name: key,
-        value: value,
-      };
-    });
+    return {
+      name: key,
+      value: value,
+    };
+  });
 }
 
 async function uploadToAPI(data) {

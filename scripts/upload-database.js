@@ -4,6 +4,9 @@ import * as Tokens from '@redotlabs/tokens';
 import * as Themes from '@redotlabs/themes';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -72,6 +75,7 @@ async function uploadToAPI(data) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.API_KEY}`,
       },
       body: JSON.stringify(data),
     });

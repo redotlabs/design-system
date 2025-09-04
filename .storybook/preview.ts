@@ -1,4 +1,4 @@
-import '../packages/ui/src/index.css';
+import './index.css';
 
 const preview = {
   parameters: {

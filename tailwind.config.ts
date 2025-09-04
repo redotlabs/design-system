@@ -1,4 +1,4 @@
-import { colors, typography } from '@redot/tokens';
+import { colors, typography } from '@redotlabs/tokens';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -8,7 +8,10 @@ export default {
   ],
   theme: {
     extend: {
-      colors,
+      colors: {
+        ...colors,
+        primary: colors.blue, // primary color를 blue로 설정
+      },
       fontSize: typography.size,
       fontWeight: typography.weight,
     },

@@ -41,32 +41,37 @@ function extractVariantOptions(variantsOptions) {
 }
 
 function convertToJson(data) {
-  return Object.entries(data).map(([key, value]) => {
-    if (typeof value === 'object' && value !== null) {
-      const result = { name: key };
+  return (
+    Object.entries(data)
+      // PascalCase인 경우는 제외
+      .filter(([key]) => !key.match(/^[A-Z]/))
+      .map(([key, value]) => {
+        if (typeof value === 'object' && value !== null) {
+          const result = { name: key };
 
-      const entries = Object.entries(value);
-      const processedValues = entries.map(([subKey, subValue]) => {
-        if (typeof subValue === 'object' && subValue !== null) {
-          return {
-            [subKey]: Object.keys(subValue),
-          };
-        } else {
-          return {
-            [subKey]: 'Single value',
-          };
+          const entries = Object.entries(value);
+          const processedValues = entries.map(([subKey, subValue]) => {
+            if (typeof subValue === 'object' && subValue !== null) {
+              return {
+                [subKey]: Object.keys(subValue),
+              };
+            } else {
+              return {
+                [subKey]: 'Single value',
+              };
+            }
+          });
+
+          result.value = processedValues;
+          return result;
         }
-      });
 
-      result.value = processedValues;
-      return result;
-    }
-
-    return {
-      name: key,
-      value: value,
-    };
-  });
+        return {
+          name: key,
+          value: value,
+        };
+      })
+  );
 }
 
 async function uploadToAPI(data) {

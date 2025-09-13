@@ -30,7 +30,7 @@ export interface ThemeProviderProps {
  *
  * @example
  * ```tsx
- * <ThemeProvider color="primary">
+ * <ThemeProvider color="blue">
  *   <App />
  * </ThemeProvider>
  * ```

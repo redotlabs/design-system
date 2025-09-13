@@ -43,6 +43,10 @@ export function ThemeProvider({
     // primary colors 주입
     const colorPalette = typeof color === 'string' ? colors[color] : color;
 
+    if (!colorPalette) {
+      return;
+    }
+
     Object.entries(colorPalette).forEach(([key, value]) => {
       document.documentElement.style.setProperty(
         `--color-primary-${key}`,

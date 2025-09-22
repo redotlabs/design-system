@@ -23,6 +23,7 @@ function Input({
   endContent,
   error,
   disabled,
+  readOnly,
   ...props
 }: InputProps) {
   return (
@@ -39,6 +40,8 @@ function Input({
         aria-invalid={error}
         disabled={disabled}
         aria-disabled={disabled}
+        readOnly={readOnly}
+        aria-readonly={readOnly}
         {...props}
       />
       {endContent && (

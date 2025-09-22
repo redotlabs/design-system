@@ -104,23 +104,11 @@ export const Statuses = {
     <div className="flex items-center gap-4">
       <div className="flex flex-col gap-2">
         <label htmlFor="focused">Focused</label>
-        <Input
-          {...args}
-          id="focused"
-          defaultValue="focused"
-          autoFocus
-          readOnly
-        />
+        <Input {...args} id="focused" defaultValue="focused" autoFocus />
       </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="disabled">Disabled</label>
-        <Input
-          {...args}
-          id="disabled"
-          defaultValue="disabled"
-          disabled
-          readOnly
-        />
+        <Input {...args} id="disabled" defaultValue="disabled" disabled />
       </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="error">Error</label>
@@ -178,9 +166,13 @@ export const PasswordInput = {
           type={showPassword ? 'text' : 'password'}
           endContent={
             showPassword ? (
-              <EyeIcon onClick={onTogglePassword} role="button" />
+              <button onClick={onTogglePassword} type="button">
+                <EyeIcon />
+              </button>
             ) : (
-              <EyeOffIcon onClick={onTogglePassword} role="button" />
+              <button onClick={onTogglePassword} type="button">
+                <EyeOffIcon />
+              </button>
             )
           }
         />

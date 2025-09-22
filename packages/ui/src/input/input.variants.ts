@@ -6,7 +6,7 @@ export const inputWrapperVariantsOptions = {
     'flex items-center w-full bg-white border border-gray-300 rounded-md transition-[color,box-shadow] overflow-hidden',
     'focus-within:border-ring focus-within:ring-primary-500 focus-within:ring-[1px]',
     'has-[:invalid]:ring-red-500 has-[:invalid]:border-red-500 has-[[aria-invalid=true]]:ring-red-500 has-[[aria-invalid=true]]:border-red-500',
-    'has-[:disabled]:pointer-events-none has-[:disabled]:cursor-not-allowed has-[:disabled]:bg-gray-100'
+    'has-[:disabled]:[&_*]:pointer-events-none has-[:disabled]:cursor-not-allowed has-[:disabled]:bg-gray-100'
   ),
 
   variants: {

@@ -20,7 +20,7 @@
               "id": "logo",
               "component": "div",
               "props": {
-                "className": "text-xl font-bold text-sky-600"
+                "className": "text-xl font-bold text-primary-600"
               },
               "children": "Redot"
             },
@@ -45,7 +45,7 @@
       "id": "hero",
       "component": "section",
       "props": {
-        "className": "bg-gradient-to-b from-white via-blue-50 to-white py-28 text-center px-6"
+        "className": "bg-gradient-to-b from-white via-primary-100 to-white py-28 text-center px-6"
       },
       "children": [
         {
@@ -70,7 +70,7 @@
           "props": {
             "variant": "contained",
             "size": "lg",
-            "className": "mt-8 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition"
+            "className": "mt-8"
           },
           "children": "무료 진단 시작하기"
         }
@@ -164,7 +164,7 @@
       "id": "comparison",
       "component": "section",
       "props": {
-        "className": "py-24 bg-slate-50"
+        "className": "py-24 bg-gray-100"
       },
       "children": [
         {
@@ -230,7 +230,7 @@
       "id": "cta",
       "component": "section",
       "props": {
-        "className": "py-24 bg-gradient-to-tr from-sky-500 to-indigo-500 text-white text-center"
+        "className": "py-24 bg-gradient-to-tr from-primary-500 to-primary-700 text-white text-center"
       },
       "children": [
         {

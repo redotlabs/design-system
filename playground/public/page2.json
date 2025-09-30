@@ -1,0 +1,179 @@
+{
+  "href": "/",
+  "title": "Redesign Starter",
+  "description": "AI 기반 리뉴얼 샘플",
+  "contents": [
+    {
+      "id": "header",
+      "component": "header",
+      "props": {
+        "className": "sticky top-0 z-50 bg-white/80 backdrop-blur border-b"
+      },
+      "children": [
+        {
+          "id": "nav-wrap",
+          "component": "nav",
+          "props": {
+            "className": "container mx-auto px-4 md:px-6 h-16 flex items-center justify-between"
+          },
+          "children": [
+            {
+              "id": "logo",
+              "component": "a",
+              "props": { "href": "/", "className": "font-bold text-[2rem]" },
+              "children": "Brand"
+            },
+            {
+              "id": "nav-cta",
+              "component": "Button",
+              "props": {
+                "variant": "contained",
+                "size": "sm",
+                "className": "ml-4"
+              },
+              "children": "Contact"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "component": "section",
+      "props": {
+        "className": "container mx-auto px-4 md:px-6 py-16 md:py-24 text-center"
+      },
+      "children": [
+        {
+          "id": "hero-eyebrow",
+          "component": "p",
+          "props": { "className": "mb-3 text-[1rem] text-[#929292]" },
+          "children": "Upgrade your site"
+        },
+        {
+          "id": "hero-title",
+          "component": "h1",
+          "props": { "className": "text-[3rem] font-bold tracking-tight" },
+          "children": "낡은 홈페이지를 새롭게"
+        },
+        {
+          "id": "hero-desc",
+          "component": "p",
+          "props": {
+            "className": "mt-4 text-[1.125rem] text-[#565656] max-w-2xl mx-auto"
+          },
+          "children": "AI가 구조를 분석하고 디자인 시스템으로 재구성합니다."
+        },
+        {
+          "id": "hero-cta",
+          "component": "div",
+          "props": { "className": "mt-8 flex justify-center gap-3" },
+          "children": [
+            {
+              "id": "cta-primary",
+              "component": "Button",
+              "props": {
+                "variant": "contained",
+                "size": "md",
+                "className": "px-6"
+              },
+              "children": "무료 컨설팅"
+            },
+            {
+              "id": "cta-secondary",
+              "component": "Button",
+              "props": { "variant": "outlined", "size": "md" },
+              "children": "사례 보기"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "component": "section",
+      "props": { "className": "container mx-auto px-4 md:px-6 py-12 md:py-16" },
+      "children": [
+        {
+          "id": "feature-grid",
+          "component": "div",
+          "props": { "className": "grid grid-cols-1 md:grid-cols-3 gap-6" },
+          "children": [
+            {
+              "id": "f1",
+              "component": "article",
+              "props": { "className": "p-6 rounded-2xl border bg-[#F5F5F5]" },
+              "children": [
+                {
+                  "id": "f1-title",
+                  "component": "h3",
+                  "props": { "className": "text-[1.25rem] font-semibold" },
+                  "children": "구조 분석"
+                },
+                {
+                  "id": "f1-desc",
+                  "component": "p",
+                  "props": { "className": "mt-2 text-[#565656]" },
+                  "children": "URL 기반 크롤링으로 IA를 도출"
+                }
+              ]
+            },
+            {
+              "id": "f2",
+              "component": "article",
+              "props": { "className": "p-6 rounded-2xl border bg-white" },
+              "children": [
+                {
+                  "id": "f2-title",
+                  "component": "h3",
+                  "props": { "className": "text-[1.25rem] font-semibold" },
+                  "children": "디자인 시스템 적용"
+                },
+                {
+                  "id": "f2-desc",
+                  "component": "p",
+                  "props": { "className": "mt-2 text-[#565656]" },
+                  "children": "토큰 기반 Tailwind 반영"
+                }
+              ]
+            },
+            {
+              "id": "f3",
+              "component": "article",
+              "props": { "className": "p-6 rounded-2xl border bg-white" },
+              "children": [
+                {
+                  "id": "f3-title",
+                  "component": "h3",
+                  "props": { "className": "text-[1.25rem] font-semibold" },
+                  "children": "빠른 배포"
+                },
+                {
+                  "id": "f3-desc",
+                  "component": "p",
+                  "props": { "className": "mt-2 text-[#565656]" },
+                  "children": "미리보기→출시까지 단축"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "component": "footer",
+      "props": { "className": "border-t" },
+      "children": [
+        {
+          "id": "footer-inner",
+          "component": "div",
+          "props": {
+            "className": "container mx-auto px-4 md:px-6 py-10 text-[#787777] text-[0.875rem]"
+          },
+          "children": "© 2025 Brand. All rights reserved."
+        }
+      ]
+    }
+  ]
+}

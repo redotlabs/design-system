@@ -66,9 +66,9 @@
     "clean-package": "^2.2.0"
   },
   "peerDependencies": {
-    "@redotlabs/themes": ">=2.0.0",
-    "@redotlabs/tokens": ">=2.0.0",
-    "@redotlabs/utils": ">=2.0.0",
+    "@redotlabs/themes": "^1.0.0",
+    "@redotlabs/tokens": "^1.0.0",
+    "@redotlabs/utils": "^1.0.0",
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },

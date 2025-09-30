@@ -44,7 +44,7 @@
     "@redotlabs/tokens": "workspace:*"
   },
   "peerDependencies": {
-    "@redotlabs/tokens": ">=2.0.0"
+    "@redotlabs/tokens": "^1.0.0"
   },
   "clean-package": "../../clean-package.config.json"
 }

@@ -39,11 +39,11 @@ jobs:
         
       - name: Configure npm for GitHub Packages
         run: |
-          echo "@redot:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "@redotlabs:registry=https://npm.pkg.github.com" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
           
       - name: Publish packages
         run: |
-          pnpm -r --filter @redot/* publish --no-git-checks
+          pnpm -r --filter @redotlabs/* publish --no-git-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

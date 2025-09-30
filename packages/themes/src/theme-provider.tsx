@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect } from 'react';
+import { type ReactNode } from 'react';
 import { colors } from '@redotlabs/tokens';
 
 type ThemeColor = Exclude<keyof typeof colors, 'white' | 'black'>;
@@ -39,21 +39,17 @@ export function ThemeProvider({
   color = 'blue',
   children,
 }: ThemeProviderProps) {
-  useEffect(() => {
-    // primary colors 주입
-    const colorPalette = typeof color === 'string' ? colors[color] : color;
+  // primary colors 주입
+  const colorPalette = typeof color === 'string' ? colors[color] : color;
 
-    if (!colorPalette) {
-      return;
-    }
+  const cssVariables = Object.entries(colorPalette)
+    .map(([key, value]) => `--color-primary-${key}: ${value}`)
+    .join(';');
 
-    Object.entries(colorPalette).forEach(([key, value]) => {
-      document.documentElement.style.setProperty(
-        `--color-primary-${key}`,
-        value as string
-      );
-    });
-  }, [color]);
-
-  return <> {children} </>;
+  return (
+    <>
+      {cssVariables && <style>{`:root { ${cssVariables} }`}</style>}
+      {children}
+    </>
+  );
 }

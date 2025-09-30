@@ -50,6 +50,9 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@redotlabs/themes": "workspace:*",
+    "@redotlabs/tokens": "workspace:*",
+    "@redotlabs/utils": "workspace:*",
     "@types/node": "^24.0.15",
     "@types/react": "^19.1.8",
     "@vitejs/plugin-react": "^4.7.0",
@@ -57,9 +60,9 @@
     "clean-package": "^2.2.0"
   },
   "peerDependencies": {
-    "@redotlabs/themes": "workspace:*",
-    "@redotlabs/tokens": "workspace:*",
-    "@redotlabs/utils": "workspace:*",
+    "@redotlabs/themes": ">=1.0.0",
+    "@redotlabs/tokens": ">=1.0.0",
+    "@redotlabs/utils": ">=1.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "@tailwindcss/vite": "^4.1.11",

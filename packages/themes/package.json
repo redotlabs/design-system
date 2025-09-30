@@ -36,15 +36,15 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^24.0.15",
     "clean-package": "^2.2.0"
   },
-  "dependencies": {
-    "@redotlabs/tokens": "workspace:*"
-  },
   "peerDependencies": {
-    "@redotlabs/tokens": "^1.0.0"
+    "@redotlabs/tokens": "workspace:*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "clean-package": "../../clean-package.config.json"
 }

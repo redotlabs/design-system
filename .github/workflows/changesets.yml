@@ -10,6 +10,7 @@ env:
 
 jobs:
   version:
+    if: github.repository == 'redotlabs/design-system'
     timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions:

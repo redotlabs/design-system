@@ -12,9 +12,13 @@ jobs:
   deploy:
     timeout-minutes: 15
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REDOT_PRIVATE_PAT }}
 
       - name: Push to deploy repository
         run: |

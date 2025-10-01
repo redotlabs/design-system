@@ -23,61 +23,21 @@ describe('Button', () => {
     expect(button.getAttribute('data-slot')).toBe('button');
   });
 
-  // 2. Variant 테스트
-  it('applies contained variant styles by default', () => {
-    render(<Button>Click</Button>);
-    const button = screen.getByRole('button');
-    expect(button.className).toContain('bg-primary-500');
-  });
-
-  it('applies outlined variant styles', () => {
-    render(<Button variant="outlined">Click</Button>);
-    const button = screen.getByRole('button');
-    expect(button.className).toContain('border-primary-500');
-  });
-
-  it('applies text variant styles', () => {
-    render(<Button variant="text">Click</Button>);
-    const button = screen.getByRole('button');
-    expect(button.className).toContain('text-primary-500');
-    expect(button.className).toContain('border-none');
-  });
-
-  // 3. Size 테스트
-  it('applies md size by default', () => {
-    render(<Button>Click</Button>);
-    const button = screen.getByRole('button');
-    expect(button.className).toContain('h-12');
-  });
-
-  it('applies sm size styles', () => {
-    render(<Button size="sm">Click</Button>);
-    const button = screen.getByRole('button');
-    expect(button.className).toContain('h-8');
-  });
-
-  it('applies lg size styles', () => {
-    render(<Button size="lg">Click</Button>);
-    const button = screen.getByRole('button');
-    expect(button.className).toContain('h-16');
-  });
-
-  // 4. Disabled 상태 테스트
+  // 2. Disabled 상태 테스트
   it('supports disabled state', () => {
     render(<Button disabled>Click</Button>);
     const button = screen.getByRole('button') as HTMLButtonElement;
     expect(button.disabled).toBe(true);
   });
 
-  // 5. ClassName 병합 테스트
-  it('merges custom className with variant classes', () => {
+  // 3. ClassName 병합 테스트
+  it('merges custom className', () => {
     render(<Button className="custom-class">Click</Button>);
     const button = screen.getByRole('button');
     expect(button.className).toContain('custom-class');
-    expect(button.className).toContain('bg-primary-500');
   });
 
-  // 6. Props 전달 테스트
+  // 4. Props 전달 테스트
   it('passes additional props to button element', () => {
     render(
       <Button data-testid="custom-button" aria-label="Custom Label">

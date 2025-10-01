@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 env:
   CI: true
@@ -21,6 +18,11 @@ jobs:
     steps:
       - name: Checkout code repository
         uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '10.6.1'
 
       - name: Setup node.js
         uses: actions/setup-node@v4

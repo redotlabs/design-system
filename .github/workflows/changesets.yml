@@ -32,13 +32,7 @@ jobs:
           node-version: 20
           cache: 'pnpm'
           registry-url: 'https://npm.pkg.github.com'
-
-      - name: Setup npm authentication
-        run: |
-          echo "@redotlabs:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.REDOT_PAT }}" >> ~/.npmrc
-          echo "Current .npmrc contents:"
-          cat ~/.npmrc
+          auth-token: ${{ secrets.REDOT_PAT }}
 
       - name: Install dependencies
         run: pnpm install

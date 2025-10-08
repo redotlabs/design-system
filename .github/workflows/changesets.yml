@@ -62,6 +62,7 @@ jobs:
           publish: pnpm ci:publish
           setupGitUser: false
         env:
+          REDOT_PAT: ${{ secrets.REDOT_PAT }}
           GITHUB_TOKEN: ${{ secrets.REDOT_PAT }}
           NPM_TOKEN: ${{ secrets.REDOT_PAT }}
           NODE_AUTH_TOKEN: ${{ secrets.REDOT_PAT }}

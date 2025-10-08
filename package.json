@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "vitest run",
+    "test": "vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build": "turbo build --filter=@redotlabs/*",
@@ -26,7 +26,8 @@
     "upload-database:dev": "NODE_ENV=development node scripts/upload-database.js",
     "upload-database:prod": "NODE_ENV=production node scripts/upload-database.js",
     "publish:upload:dev": "pnpm build && pnpm upload-database:dev",
-    "publish:upload:prod": "pnpm build && pnpm upload-database:prod"
+    "publish:upload:prod": "pnpm build && pnpm upload-database:prod",
+    "chromatic": "npx chromatic"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -61,6 +62,7 @@
     "@types/node": "^24.0.15",
     "@types/react": "^19.1.8",
     "@vitejs/plugin-react": "^4.7.0",
+    "chromatic": "^13.3.0",
     "clean-package": "^2.2.0",
     "dotenv": "^17.2.1",
     "eslint": "^9.30.1",

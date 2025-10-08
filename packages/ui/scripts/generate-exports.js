@@ -6,35 +6,14 @@ function convertComponentName(dirName) {
 }
 
 function getComponentDirs() {
-  return fs
-    .readdirSync('./src')
-    .filter((dir) => fs.statSync(`./src/${dir}`).isDirectory());
-}
-
-function extractComponentName(dirName) {
-  const componentFilePath = `./src/${dirName}/${dirName}.tsx`;
-
-  if (!fs.existsSync(componentFilePath)) {
-    return convertComponentName(dirName);
-  }
-
-  const content = fs.readFileSync(componentFilePath, 'utf-8');
-
-  // export { ComponentName, ... } 패턴에서 첫 번째 컴포넌트 이름 추출
-  const exportMatch = content.match(/export\s*\{\s*([A-Z][a-zA-Z0-9]*)/);
-
-  if (exportMatch && exportMatch[1]) {
-    return exportMatch[1];
-  }
-
-  // 찾지 못하면 기본 변환 사용
-  return convertComponentName(dirName);
+  return fs.readdirSync('./src').filter((dir) => fs.statSync(`./src/${dir}`).isDirectory());
 }
 
 function generateExportsAll() {
   const componentDirs = getComponentDirs();
-  const exports =
-    componentDirs.map((dir) => `export * from './${dir}';`).join('\n') + '\n'; // add EOL
+  const exports = componentDirs
+    .map((dir) => `export * from './${dir}';`)
+    .join('\n') + '\n'; // add EOL
 
   fs.writeFileSync('./src/index.ts', exports);
 }
@@ -42,10 +21,9 @@ function generateExportsAll() {
 function generateExportsOnlyComponents() {
   const componentDirs = getComponentDirs();
 
-  const exportsOnlyComponents =
-    componentDirs
-      .map((dir) => `export { ${extractComponentName(dir)} } from './${dir}';`)
-      .join('\n') + '\n'; // add EOL
+  const exportsOnlyComponents = componentDirs
+    .map((dir) => `export { ${convertComponentName(dir)} } from './${dir}';`)
+    .join('\n') + '\n'; // add EOL
 
   fs.writeFileSync('./src/only-components.ts', exportsOnlyComponents);
 }

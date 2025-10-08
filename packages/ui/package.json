@@ -49,9 +49,6 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
-    "@redotlabs/themes": ">=1.0.0",
-    "@redotlabs/tokens": ">=1.0.0",
-    "@redotlabs/utils": ">=1.0.0",
     "class-variance-authority": "^0.7.1",
     "sonner": "^2.0.7"
   },
@@ -66,6 +63,9 @@
     "prop-types": "^15.8.1"
   },
   "peerDependencies": {
+    "@redotlabs/themes": ">=1.0.0",
+    "@redotlabs/tokens": ">=1.0.0",
+    "@redotlabs/utils": ">=1.0.0",
     "@tailwindcss/vite": "^4.1.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

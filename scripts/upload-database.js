@@ -15,8 +15,8 @@ const BASE_URL = isProduction
   : 'https://server.ryxxn.com/redot/ai';
 
 const RESULT_URL = isProduction
-  ? 'https://d1uglncwbgsd7b.cloudfront.net/ui'
-  : 'https://d1uglncwbgsd7b.cloudfront.net/ui-test';
+  ? 'https://cdn.redot.me/ui'
+  : 'https://cdn.redot.me/ui-test';
 
 function getVersion() {
   try {

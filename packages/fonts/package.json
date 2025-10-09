@@ -1,0 +1,48 @@
+{
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "build:fast": "bash scripts/build.sh --no-dts",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "name": "@redotlabs/fonts",
+  "version": "1.0.0",
+  "description": "Font packages for Redot design system",
+  "type": "module",
+  "exports": {
+    "./*": {
+      "require": {
+        "types": "./dist/*/index.d.cts",
+        "default": "./dist/*/index.cjs"
+      },
+      "import": {
+        "types": "./dist/*/index.d.ts",
+        "default": "./dist/*/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "author": "redot",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redotlabs/design-system.git",
+    "directory": "packages/fonts"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "clean-package": "^2.2.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "clean-package": "../../clean-package.config.json"
+}

@@ -14,7 +14,7 @@ function App() {
 
   return (
     <ThemeProvider color="blue">
-      <main>
+      <main className="font-pretendard">
         {page.contents.map((content: any) => (
           <SDUIRenderer key={content.id} content={content} />
         ))}

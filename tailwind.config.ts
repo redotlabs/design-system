@@ -1,4 +1,5 @@
 import { colors, typography } from '@redotlabs/tokens';
+import { pretendard } from '@redotlabs/fonts/pretendard';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -14,6 +15,9 @@ export default {
       },
       fontSize: typography.size,
       fontWeight: typography.weight,
+      fontFamily: {
+        pretendard: pretendard.family.split(', '),
+      },
     },
   },
   plugins: [],

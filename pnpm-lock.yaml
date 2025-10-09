@@ -14,6 +14,9 @@ importers:
       '@eslint/js':
         specifier: ^9.30.1
         version: 9.32.0
+      '@redotlabs/fonts':
+        specifier: workspace:*
+        version: link:packages/fonts
       '@redotlabs/sdui-renderer':
         specifier: workspace:*
         version: link:packages/sdui-renderer
@@ -128,6 +131,21 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@24.0.15)(jiti@2.4.2)(jsdom@27.0.0(postcss@8.5.6))(lightningcss@1.30.1)(yaml@2.8.0)
+
+  packages/fonts:
+    devDependencies:
+      '@types/node':
+        specifier: ^24.0.15
+        version: 24.0.15
+      clean-package:
+        specifier: ^2.2.0
+        version: 2.2.0
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.0(jiti@2.4.2)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.8.0)
+      typescript:
+        specifier: ^5.7.2
+        version: 5.8.3
 
   packages/sdui-renderer:
     dependencies:
@@ -255,6 +273,9 @@ importers:
 
   playground:
     dependencies:
+      '@redotlabs/fonts':
+        specifier: workspace:*
+        version: link:../packages/fonts
       '@redotlabs/tokens':
         specifier: workspace:*
         version: link:../packages/tokens

@@ -23,4 +23,5 @@ export default defineConfig({
   clean: true,
   outDir: 'dist',
   target: 'es2020',
+  injectStyle: true, // CSS를 JS에 인라인으로 포함
 });

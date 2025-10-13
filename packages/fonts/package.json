@@ -7,7 +7,7 @@
     "postpack": "clean-package restore"
   },
   "name": "@redotlabs/fonts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Font packages for Redot design system",
   "type": "module",
   "exports": {

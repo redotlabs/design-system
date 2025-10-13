@@ -6,35 +6,16 @@
 
 ## Usage
 
-### Using Pretendard Font
+```tsx
+// main.tsx, index.tsx ...
 
-```typescript
-// CSS is automatically included
-import { pretendard } from '@redotlabs/fonts/pretendard';
-
-// Use as CSS variable
-console.log(pretendard.variable); // '--font-pretendard'
-
-// Use as font-family string
-console.log(pretendard.family);
-// 'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif'
-```
-
-### With Tailwind CSS
-
-```javascript
-// tailwind.config.js
-import { pretendard } from '@redotlabs/fonts/pretendard';
-
-export default {
-  theme: {
-    extend: {
-      fontFamily: {
-        pretendard: pretendard.family.split(', '),
-      },
-    },
-  },
-};
+export default function App() {
+  return (
+    <ThemeProvider color="blue" font="pretendard">
+      <></>
+    </ThemeProvider>
+  );
+}
 ```
 
 ## Font Source

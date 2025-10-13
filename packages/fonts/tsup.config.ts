@@ -8,10 +8,13 @@ const fontDirs = readdirSync(srcDir, { withFileTypes: true })
   .filter((dirent) => dirent.isDirectory())
   .map((dirent) => dirent.name);
 
-const entry = fontDirs.reduce((acc, dir) => {
-  acc[`${dir}/index`] = join(srcDir, dir, 'index.ts');
-  return acc;
-}, {});
+const entry = fontDirs.reduce(
+  (acc, dir) => {
+    acc[`${dir}/index`] = join(srcDir, dir, 'index.ts');
+    return acc;
+  },
+  { index: join(srcDir, 'index.ts') }
+);
 
 export default defineConfig({
   entry,

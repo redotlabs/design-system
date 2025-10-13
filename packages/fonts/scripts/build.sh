@@ -36,5 +36,10 @@ for font_dir in "$SRC_DIR"/*; do
   fi
 done
 
+# Remove bundled CSS from root
+if [ -f "$DIST_DIR/index.css" ]; then
+  rm "$DIST_DIR/index.css"
+fi
+
 echo "[FONTS] Build complete!"
 

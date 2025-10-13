@@ -1,5 +1,12 @@
 # @redotlabs/ui
 
+## 2.0.0
+
+### Patch Changes
+
+- Updated dependencies [9244b00]
+  - @redotlabs/themes@1.1.0
+
 ## 1.1.0
 
 ### Minor Changes

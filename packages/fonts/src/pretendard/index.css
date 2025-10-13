@@ -74,3 +74,6 @@
   --font-pretendard:
     'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
+.font-pretendard {
+  font-family: var(--font-pretendard);
+}

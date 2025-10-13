@@ -1,7 +1,9 @@
 import { type ReactNode } from 'react';
 import { colors } from '@redotlabs/tokens';
+import * as fonts from '@redotlabs/fonts';
 
-type ThemeColor = Exclude<keyof typeof colors, 'white' | 'black'>;
+export type ThemeColor = Exclude<keyof typeof colors, 'white' | 'black'>;
+export type ThemeFont = keyof typeof fonts;
 
 type ColorPalette = {
   [key in
@@ -22,6 +24,7 @@ export interface ThemeProviderProps {
    * @default 'blue'
    */
   color?: ThemeColor | ColorPalette;
+  font?: ThemeFont;
   children: ReactNode;
 }
 
@@ -37,6 +40,7 @@ export interface ThemeProviderProps {
  */
 export function ThemeProvider({
   color = 'blue',
+  font = 'pretendard',
   children,
 }: ThemeProviderProps) {
   // primary colors 주입
@@ -46,9 +50,12 @@ export function ThemeProvider({
     .map(([key, value]) => `--color-primary-${key}: ${value}`)
     .join(';');
 
+  const fontFamily = fonts?.[font]?.family ?? '';
+
   return (
     <>
       {cssVariables && <style>{`:root { ${cssVariables} }`}</style>}
+      {fontFamily && <style>{`body { font-family: ${fontFamily}; }`}</style>}
       {children}
     </>
   );

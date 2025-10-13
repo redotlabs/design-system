@@ -181,6 +181,9 @@ importers:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
     devDependencies:
+      '@redotlabs/fonts':
+        specifier: workspace:*
+        version: link:../fonts
       '@redotlabs/tokens':
         specifier: workspace:*
         version: link:../tokens
@@ -276,6 +279,9 @@ importers:
       '@redotlabs/fonts':
         specifier: workspace:*
         version: link:../packages/fonts
+      '@redotlabs/themes':
+        specifier: workspace:*
+        version: link:../packages/themes
       '@redotlabs/tokens':
         specifier: workspace:*
         version: link:../packages/tokens

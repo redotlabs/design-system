@@ -13,8 +13,8 @@ function App() {
   if (!page) return <div>Loading...</div>;
 
   return (
-    <ThemeProvider color="blue">
-      <main className="font-pretendard">
+    <ThemeProvider color="blue" font="pretendard">
+      <main>
         {page.contents.map((content: any) => (
           <SDUIRenderer key={content.id} content={content} />
         ))}

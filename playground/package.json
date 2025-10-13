@@ -16,6 +16,7 @@
     "tailwindcss": "^4.1.11",
     "@redotlabs/ui": "workspace:*",
     "@redotlabs/tokens": "workspace:*",
+    "@redotlabs/themes": "workspace:*",
     "@redotlabs/fonts": "workspace:*"
   },
   "devDependencies": {

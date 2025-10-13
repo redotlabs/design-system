@@ -63,7 +63,7 @@
     "prop-types": "^15.8.1"
   },
   "peerDependencies": {
-    "@redotlabs/themes": ">=1.0.0",
+    "@redotlabs/themes": ">=1.1.0",
     "@redotlabs/tokens": ">=1.0.0",
     "@redotlabs/utils": ">=1.0.0",
     "@tailwindcss/vite": "^4.1.11",

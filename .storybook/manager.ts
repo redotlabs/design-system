@@ -5,7 +5,7 @@ addons.setConfig({
   theme: create({
     base: 'light',
     brandTitle: 'Redot',
-    brandImage: './logo.svg',
+    brandImage: '/logo.svg',
     brandUrl: 'https://storybook.redot.me/',
     brandTarget: '_self',
     colorPrimary: '#FAF9F8',

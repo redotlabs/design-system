@@ -10,7 +10,7 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_3267_6322)">
+      <g clipPath="url(#clip0_3267_6322)">
         <path
           d="M23.4119 31.8592L13.4301 21.8963L6.07274 14.5527C5.13036 20.6857 7.00246 27.1688 11.7355 31.8887C19.6296 39.768 32.4216 39.768 40.3157 31.8887L30.3509 21.9427C28.6901 25.5322 26.3785 28.8982 23.4119 31.855V31.8592Z"
           fill="url(#paint0_linear_3267_6322)"
@@ -49,8 +49,8 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
         fill="black"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M136.951 9.28223C139.146 9.28223 141.136 9.76361 142.92 10.7248C144.704 11.6588 146.103 12.9946 147.119 14.7304C148.161 16.4663 148.682 18.4699 148.682 20.7397C148.682 23.0095 148.147 25.0131 147.077 26.749C146.035 28.4848 144.606 29.8333 142.796 30.7961C141.012 31.7301 139.008 32.1988 136.785 32.1988C134.561 32.1988 132.613 31.7317 130.857 30.7961C129.1 29.8349 127.715 28.4848 126.7 26.749C125.712 25.0131 125.217 23.0095 125.217 20.7397C125.217 18.4699 125.724 16.4663 126.74 14.7304C127.782 12.9946 129.196 11.6588 130.98 10.7248C132.763 9.76361 134.753 9.28223 136.949 9.28223H136.951ZM137.067 13.9047C133.253 13.9047 130.159 16.997 130.159 20.813C130.159 24.6274 133.251 27.7213 137.067 27.7213C140.883 27.7213 143.975 24.629 143.975 20.813C143.975 16.997 140.883 13.9047 137.067 13.9047Z"
         fill="black"
       />
@@ -67,8 +67,8 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
           y2="37.7981"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3A79EE" />
-          <stop offset="1" stop-color="#669CF9" />
+          <stop stopColor="#3A79EE" />
+          <stop offset="1" stopColor="#669CF9" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_3267_6322"
@@ -78,8 +78,8 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
           y2="37.7981"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#669CF9" />
-          <stop offset="1" stop-color="#3A79EE" />
+          <stop stopColor="#669CF9" />
+          <stop offset="1" stopColor="#3A79EE" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_3267_6322"
@@ -89,8 +89,8 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
           y2="34.4145"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.384615" stop-color="#3A79EE" />
-          <stop offset="1" stop-color="#669CF9" />
+          <stop offset="0.384615" stopColor="#3A79EE" />
+          <stop offset="1" stopColor="#669CF9" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_3267_6322"
@@ -100,8 +100,8 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
           y2="25.8069"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.298077" stop-color="#3A79EE" />
-          <stop offset="1" stop-color="#669CF9" />
+          <stop offset="0.298077" stopColor="#3A79EE" />
+          <stop offset="1" stopColor="#669CF9" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_3267_6322"
@@ -111,8 +111,8 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
           y2="36.5829"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#669CF9" />
-          <stop offset="0.79807" stop-color="#3A79EE" />
+          <stop stopColor="#669CF9" />
+          <stop offset="0.79807" stopColor="#3A79EE" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_3267_6322"
@@ -122,8 +122,8 @@ const LogoText = (props?: ComponentProps<'svg'>) => {
           y2="38.7293"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6298F8" />
-          <stop offset="0.605769" stop-color="#4B87F3" />
+          <stop stopColor="#6298F8" />
+          <stop offset="0.605769" stopColor="#4B87F3" />
         </linearGradient>
         <clipPath id="clip0_3267_6322">
           <rect width="40.3157" height="40.3157" fill="white" />

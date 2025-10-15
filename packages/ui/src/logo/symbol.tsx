@@ -10,7 +10,7 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_3267_6291)">
+      <g clipPath="url(#clip0_3267_6291)">
         <path
           d="M74.3315 101.149L42.64 69.5175L19.2807 46.2021C16.2887 65.674 22.2325 86.2574 37.2598 101.243C62.3231 126.259 102.937 126.259 128 101.243L96.3625 69.6648C91.0895 81.0613 83.7503 91.7481 74.3315 101.136V101.149Z"
           fill="url(#paint0_linear_3267_6291)"
@@ -45,8 +45,8 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
           y2="120.005"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3A79EE" />
-          <stop offset="1" stop-color="#669CF9" />
+          <stop stopColor="#3A79EE" />
+          <stop offset="1" stopColor="#669CF9" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_3267_6291"
@@ -56,8 +56,8 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
           y2="120.005"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#669CF9" />
-          <stop offset="1" stop-color="#3A79EE" />
+          <stop stopColor="#669CF9" />
+          <stop offset="1" stopColor="#3A79EE" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_3267_6291"
@@ -67,8 +67,8 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
           y2="109.264"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.384615" stop-color="#3A79EE" />
-          <stop offset="1" stop-color="#669CF9" />
+          <stop offset="0.384615" stopColor="#3A79EE" />
+          <stop offset="1" stopColor="#669CF9" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_3267_6291"
@@ -78,8 +78,8 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
           y2="81.9318"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.298077" stop-color="#3A79EE" />
-          <stop offset="1" stop-color="#669CF9" />
+          <stop offset="0.298077" stopColor="#3A79EE" />
+          <stop offset="1" stopColor="#669CF9" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_3267_6291"
@@ -89,8 +89,8 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
           y2="116.149"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#669CF9" />
-          <stop offset="0.79807" stop-color="#3A79EE" />
+          <stop stopColor="#669CF9" />
+          <stop offset="0.79807" stopColor="#3A79EE" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_3267_6291"
@@ -100,8 +100,8 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
           y2="122.963"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6298F8" />
-          <stop offset="0.605769" stop-color="#4B87F3" />
+          <stop stopColor="#6298F8" />
+          <stop offset="0.605769" stopColor="#4B87F3" />
         </linearGradient>
         <clipPath id="clip0_3267_6291">
           <rect width="128" height="128" fill="white" />

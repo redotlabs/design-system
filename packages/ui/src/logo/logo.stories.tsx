@@ -1,7 +1,6 @@
 import { Logo } from './index';
 import { Meta } from '@storybook/react-vite';
 
-// const meta: Meta<typeof Toast> = {
 const meta: Meta = {
   title: 'Components/Logo',
   component: Logo,

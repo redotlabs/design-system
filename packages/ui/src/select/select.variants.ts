@@ -16,7 +16,55 @@ export const selectVariantsOptions = {
   } as const,
 };
 
+export const selectDropdownVariantsOptions = {
+  base: 'absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden',
+
+  variants: {
+    size: {
+      sm: 'p-1 gap-1 rounded-lg mt-1',
+      md: 'p-1.5 gap-1 rounded-[10px] mt-2',
+      lg: 'p-2 gap-1 rounded-[10px] mt-2',
+    },
+  },
+
+  defaultVariants: {
+    size: 'md',
+  } as const,
+};
+
+export const selectOptionVariantsOptions = {
+  base: 'flex items-center w-full font-semibold transition-colors text-left text-gray-800',
+
+  variants: {
+    size: {
+      sm: 'px-[18px] py-[5.5px] rounded-md text-sm',
+      md: 'px-5 py-[5.5px] rounded-lg text-lg',
+      lg: 'px-[22px] py-[5.5px] rounded-lg text-xl',
+    },
+  },
+
+  defaultVariants: {
+    size: 'md',
+  } as const,
+};
+
+export const selectIconSizeMap = {
+  sm: 22,
+  md: 26,
+  lg: 30,
+} as const;
+
 export const selectVariants = cva(selectVariantsOptions.base, {
   variants: selectVariantsOptions.variants,
   defaultVariants: selectVariantsOptions.defaultVariants,
+});
+
+export const selectDropdownVariants = cva(selectDropdownVariantsOptions.base, {
+  variants: selectDropdownVariantsOptions.variants,
+  defaultVariants: selectDropdownVariantsOptions.defaultVariants,
+});
+
+export const selectOptionVariants = cva(selectOptionVariantsOptions.base, {
+  variants: selectOptionVariantsOptions.variants,
+  defaultVariants: selectOptionVariantsOptions.defaultVariants,
 });

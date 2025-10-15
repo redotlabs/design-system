@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-const Symbol = (props?: ComponentProps<'svg'>) => {
+const LogoSymbol = (props?: ComponentProps<'svg'>) => {
   return (
     <svg
       width="128"
@@ -111,4 +111,4 @@ const Symbol = (props?: ComponentProps<'svg'>) => {
   );
 };
 
-export default Symbol;
+export default LogoSymbol;

@@ -1,5 +1,7 @@
 import * as fs from 'fs';
 
+const ONLY_COMPONENTS_EXPORT_IGNORE_LIST = ['logo', 'toast'];
+
 function convertComponentName(dirName) {
   if (!dirName) throw new Error('Directory name is required');
   return dirName.charAt(0).toUpperCase() + dirName.slice(1);
@@ -40,7 +42,9 @@ function generateExportsAll() {
 }
 
 function generateExportsOnlyComponents() {
-  const componentDirs = getComponentDirs();
+  const componentDirs = getComponentDirs().filter(
+    (dir) => !ONLY_COMPONENTS_EXPORT_IGNORE_LIST.includes(dir)
+  );
 
   const exportsOnlyComponents =
     componentDirs

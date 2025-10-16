@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Select } from './select';
 import { selectVariantsOptions } from './select.variants';
 import { Meta } from '@storybook/react-vite';
@@ -66,30 +67,43 @@ const defaultOptions = [
   { value: '2', label: 'option' },
 ];
 
+const DefaultComponent = (args: typeof Default.args) => {
+  const [value, setValue] = useState('');
+  return (
+    <div style={{ minHeight: '200px', width: '200px' }}>
+      <Select {...args} value={value} onChange={setValue} />
+    </div>
+  );
+};
+
 export const Default = {
+  render: DefaultComponent,
   args: {
     options: defaultOptions,
     placeholder: 'select',
     size: selectVariantsOptions.defaultVariants.size,
     disabled: false,
   },
-  decorators: [
-    (Story) => (
-      <div style={{ minHeight: '200px', width: '200px' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
-export const Sizes = {
-  render: () => (
+const SizesComponent = () => {
+  const [valueSm, setValueSm] = useState('');
+  const [valueMd, setValueMd] = useState('');
+  const [valueLg, setValueLg] = useState('');
+
+  return (
     <div className="flex items-start gap-4">
       {/* sm */}
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">sm</span>
         <div style={{ width: '124px', minHeight: '150px' }}>
-          <Select size="sm" options={defaultOptions} placeholder="select" />
+          <Select
+            size="sm"
+            options={defaultOptions}
+            placeholder="select"
+            value={valueSm}
+            onChange={setValueSm}
+          />
         </div>
       </div>
 
@@ -97,7 +111,13 @@ export const Sizes = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">md (default)</span>
         <div style={{ width: '150px', minHeight: '150px' }}>
-          <Select size="md" options={defaultOptions} placeholder="select" />
+          <Select
+            size="md"
+            options={defaultOptions}
+            placeholder="select"
+            value={valueMd}
+            onChange={setValueMd}
+          />
         </div>
       </div>
 
@@ -105,11 +125,21 @@ export const Sizes = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">lg</span>
         <div style={{ width: '170px', minHeight: '150px' }}>
-          <Select size="lg" options={defaultOptions} placeholder="select" />
+          <Select
+            size="lg"
+            options={defaultOptions}
+            placeholder="select"
+            value={valueLg}
+            onChange={setValueLg}
+          />
         </div>
       </div>
     </div>
-  ),
+  );
+};
+
+export const Sizes = {
+  render: SizesComponent,
   parameters: {
     layout: 'padded',
   },

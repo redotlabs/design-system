@@ -17,7 +17,7 @@ interface SelectOption {
   disabled?: boolean;
 }
 
-type SelectProps = Omit<ComponentProps<'div'>, 'size'> &
+type SelectProps = Omit<ComponentProps<'div'>, 'size' | 'onChange'> &
   SelectVariants & {
     options: SelectOption[];
     value?: string;
@@ -30,17 +30,14 @@ function Select({
   className,
   size,
   options,
-  value: controlledValue,
+  value,
   onChange,
   placeholder = 'select',
   disabled = false,
   ...props
 }: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [internalValue, setInternalValue] = useState(controlledValue || '');
   const wrapperRef = useRef<HTMLDivElement>(null);
-
-  const value = controlledValue !== undefined ? controlledValue : internalValue;
 
   const selectedLabel =
     options.find((opt) => opt.value === value)?.label || placeholder;
@@ -87,9 +84,6 @@ function Select({
   };
 
   const handleSelect = (optionValue: string) => {
-    if (controlledValue === undefined) {
-      setInternalValue(optionValue);
-    }
     onChange?.(optionValue);
     setIsOpen(false);
   };

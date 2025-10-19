@@ -10,6 +10,7 @@ import {
 } from 'react';
 import { type VariantProps } from 'class-variance-authority';
 import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@redotlabs/utils';
 import { Button } from '../button';
 import {
@@ -201,25 +202,49 @@ function SelectValue({ placeholder = 'select' }: SelectValueProps) {
 
 /**
  * Container for SelectItem components. Only renders when open.
+ * Uses Framer Motion for smooth enter/exit animations.
  */
-type SelectContentProps = ComponentProps<'div'> & {
+interface SelectContentProps {
+  className?: string;
   children: ReactNode;
+}
+
+const dropdownVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.95,
+    y: -8,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+  },
 };
 
-function SelectContent({ className, children, ...props }: SelectContentProps) {
+function SelectContent({ className, children }: SelectContentProps) {
   const { open, size } = useSelectContext();
 
-  if (!open) return null;
-
   return (
-    <div
-      role="listbox"
-      data-slot="select-dropdown"
-      className={cn(selectDropdownVariants({ size }), className)}
-      {...props}
-    >
-      {children}
-    </div>
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          role="listbox"
+          data-slot="select-dropdown"
+          className={cn(selectDropdownVariants({ size }), className)}
+          variants={dropdownVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          transition={{
+            duration: 0.1,
+            ease: [0.4, 0, 0.2, 1],
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 

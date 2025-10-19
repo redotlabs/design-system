@@ -8,6 +8,7 @@ import {
   selectOptionVariants,
   selectIconSizeMap,
 } from './select.variants';
+import { Button } from '../button';
 
 type SelectVariants = VariantProps<typeof selectVariants>;
 
@@ -94,14 +95,15 @@ function Select({
       className={cn('relative w-full', className)}
       {...props}
     >
-      <button
-        type="button"
+      <Button
         onClick={handleToggle}
         disabled={disabled}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         data-slot="select"
-        className={cn(selectVariants({ size }), 'w-full')}
+        variant="text"
+        size={size}
+        className={selectVariants({ size })}
       >
         <span>{selectedLabel}</span>
         <ChevronDown
@@ -111,7 +113,7 @@ function Select({
             isOpen && 'rotate-180'
           )}
         />
-      </button>
+      </Button>
 
       {isOpen && (
         <div

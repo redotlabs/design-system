@@ -145,11 +145,5 @@ function Select({
   );
 }
 
-export {
-  Select,
-  selectVariants,
-  selectDropdownVariants,
-  selectOptionVariants,
-  selectIconSizeMap,
-};
+export { Select };
 export type { SelectVariants, SelectProps, SelectOption };

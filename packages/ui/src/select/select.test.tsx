@@ -1,44 +1,90 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import { Select } from './select';
-
-const mockOptions = [
-  { value: '1', label: 'Option 1' },
-  { value: '2', label: 'Option 2' },
-  { value: '3', label: 'Option 3' },
-];
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from './select';
 
 describe('Select', () => {
-  // 1. 기본 렌더링 테스트
   it('renders with placeholder', () => {
-    render(<Select options={mockOptions} placeholder="Choose an option" />);
-    const button = screen.getByRole('button', { name: /choose an option/i });
+    render(
+      <Select>
+        <SelectTrigger>
+          <SelectValue placeholder="Choose an option" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+        </SelectContent>
+      </Select>
+    );
+    const button = screen.getByRole('button');
     expect(button).toBeDefined();
+    expect(screen.getByText('Choose an option')).toBeDefined();
   });
 
   it('renders as button element with correct type', () => {
-    render(<Select options={mockOptions} />);
+    render(
+      <Select>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+        </SelectContent>
+      </Select>
+    );
     const button = screen.getByRole('button');
     expect(button.tagName).toBe('BUTTON');
     expect(button.getAttribute('type')).toBe('button');
   });
 
   it('should have data-slot attribute', () => {
-    render(<Select options={mockOptions} />);
+    render(
+      <Select>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+        </SelectContent>
+      </Select>
+    );
     const button = screen.getByRole('button');
     expect(button.getAttribute('data-slot')).toBe('select');
   });
 
-  // 2. 드롭다운 열기/닫기 테스트
   it('opens dropdown on click', () => {
-    render(<Select options={mockOptions} />);
+    render(
+      <Select>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+    );
     const trigger = screen.getByRole('button');
     fireEvent.click(trigger);
     expect(screen.getByRole('listbox')).toBeDefined();
   });
 
   it('closes dropdown after selecting an option', () => {
-    render(<Select options={mockOptions} />);
+    render(
+      <Select>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+    );
     const trigger = screen.getByRole('button');
     fireEvent.click(trigger);
 
@@ -48,10 +94,19 @@ describe('Select', () => {
     expect(screen.queryByRole('listbox')).toBeNull();
   });
 
-  // 3. 선택 기능 테스트
-  it('selects an option and calls onChange', () => {
+  it('selects an option and calls onValueChange', () => {
     const handleChange = vi.fn();
-    render(<Select options={mockOptions} onChange={handleChange} />);
+    render(
+      <Select onValueChange={handleChange}>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+    );
 
     const trigger = screen.getByRole('button');
     fireEvent.click(trigger);
@@ -63,24 +118,57 @@ describe('Select', () => {
   });
 
   it('displays selected value', () => {
-    render(<Select options={mockOptions} value="2" />);
+    render(
+      <Select value="2">
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2">Option 2</SelectItem>
+        </SelectContent>
+      </Select>
+    );
+
+    const trigger = screen.getByRole('button');
+    fireEvent.click(trigger);
+
+    const option = screen.getByText('Option 2');
+    fireEvent.click(option);
+
     expect(screen.getByText('Option 2')).toBeDefined();
   });
 
-  // 4. Disabled 상태 테스트
   it('disables select when disabled prop is true', () => {
-    render(<Select options={mockOptions} disabled />);
+    render(
+      <Select disabled>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+        </SelectContent>
+      </Select>
+    );
     const trigger = screen.getByRole('button') as HTMLButtonElement;
     expect(trigger.disabled).toBe(true);
   });
 
   it('disables specific options', () => {
-    const optionsWithDisabled = [
-      { value: '1', label: 'Option 1' },
-      { value: '2', label: 'Option 2', disabled: true },
-      { value: '3', label: 'Option 3' },
-    ];
-    render(<Select options={optionsWithDisabled} />);
+    render(
+      <Select>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+          <SelectItem value="2" disabled>
+            Option 2
+          </SelectItem>
+          <SelectItem value="3">Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+    );
 
     const trigger = screen.getByRole('button');
     fireEvent.click(trigger);
@@ -89,11 +177,17 @@ describe('Select', () => {
     expect((disabledOption as HTMLButtonElement).disabled).toBe(true);
   });
 
-  // 5. 외부 클릭 테스트
   it('closes dropdown on outside click', () => {
     render(
       <div>
-        <Select options={mockOptions} />
+        <Select>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
         <button type="button">Outside</button>
       </div>
     );
@@ -107,9 +201,17 @@ describe('Select', () => {
     expect(screen.queryByRole('listbox')).toBeNull();
   });
 
-  // 6. ESC 키 테스트
   it('closes dropdown on ESC key', () => {
-    render(<Select options={mockOptions} />);
+    render(
+      <Select>
+        <SelectTrigger>
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+        </SelectContent>
+      </Select>
+    );
 
     const trigger = screen.getByRole('button');
     fireEvent.click(trigger);
@@ -119,11 +221,19 @@ describe('Select', () => {
     expect(screen.queryByRole('listbox')).toBeNull();
   });
 
-  // 7. ClassName 병합 테스트
-  it('merges custom className', () => {
-    render(<Select options={mockOptions} className="custom-class" />);
-    const wrapper = screen.getByRole('button').parentElement;
-    expect(wrapper?.className).toContain('custom-class');
+  it('merges custom className on trigger', () => {
+    render(
+      <Select>
+        <SelectTrigger className="custom-class">
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">Option 1</SelectItem>
+        </SelectContent>
+      </Select>
+    );
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('custom-class');
   });
 });
 

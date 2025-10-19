@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Select } from './select';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from './select';
 import { selectVariantsOptions } from './select.variants';
 import { Meta } from '@storybook/react-vite';
 
@@ -40,38 +46,29 @@ const meta: Meta<typeof Select> = {
         defaultValue: { summary: 'false' },
       },
     },
-    placeholder: {
-      control: {
-        type: 'text',
-      },
-      description: 'Placeholder text when nothing is selected',
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'select' },
-      },
-    },
-    options: {
-      control: false,
-      description: 'Array of select options',
-      table: {
-        type: { summary: 'SelectOption[]' },
-      },
-    },
   },
 };
 
 export default meta;
 
-const defaultOptions = [
-  { value: '1', label: 'option' },
-  { value: '2', label: 'option' },
-];
-
 const DefaultComponent = (args: typeof Default.args) => {
   const [value, setValue] = useState('');
   return (
     <div style={{ minHeight: '200px', width: '200px' }}>
-      <Select {...args} value={value} onChange={setValue} />
+      <Select
+        value={value}
+        onValueChange={setValue}
+        size={args.size}
+        disabled={args.disabled}
+      >
+        <SelectTrigger>
+          <SelectValue placeholder="select" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="1">option</SelectItem>
+          <SelectItem value="2">option</SelectItem>
+        </SelectContent>
+      </Select>
     </div>
   );
 };
@@ -79,8 +76,6 @@ const DefaultComponent = (args: typeof Default.args) => {
 export const Default = {
   render: DefaultComponent,
   args: {
-    options: defaultOptions,
-    placeholder: 'select',
     size: selectVariantsOptions.defaultVariants.size,
     disabled: false,
   },
@@ -97,13 +92,15 @@ const SizesComponent = () => {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">sm</span>
         <div style={{ width: '124px', minHeight: '150px' }}>
-          <Select
-            size="sm"
-            options={defaultOptions}
-            placeholder="select"
-            value={valueSm}
-            onChange={setValueSm}
-          />
+          <Select size="sm" value={valueSm} onValueChange={setValueSm}>
+            <SelectTrigger>
+              <SelectValue placeholder="select" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="1">option</SelectItem>
+              <SelectItem value="2">option</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
@@ -111,13 +108,15 @@ const SizesComponent = () => {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">md (default)</span>
         <div style={{ width: '150px', minHeight: '150px' }}>
-          <Select
-            size="md"
-            options={defaultOptions}
-            placeholder="select"
-            value={valueMd}
-            onChange={setValueMd}
-          />
+          <Select size="md" value={valueMd} onValueChange={setValueMd}>
+            <SelectTrigger>
+              <SelectValue placeholder="select" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="1">option</SelectItem>
+              <SelectItem value="2">option</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
@@ -125,13 +124,15 @@ const SizesComponent = () => {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">lg</span>
         <div style={{ width: '170px', minHeight: '150px' }}>
-          <Select
-            size="lg"
-            options={defaultOptions}
-            placeholder="select"
-            value={valueLg}
-            onChange={setValueLg}
-          />
+          <Select size="lg" value={valueLg} onValueChange={setValueLg}>
+            <SelectTrigger>
+              <SelectValue placeholder="select" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="1">option</SelectItem>
+              <SelectItem value="2">option</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
     </div>
@@ -152,7 +153,15 @@ export const Open = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">false (default)</span>
         <div style={{ width: '150px', minHeight: '150px' }}>
-          <Select options={defaultOptions} placeholder="select" />
+          <Select>
+            <SelectTrigger>
+              <SelectValue placeholder="select" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="1">option</SelectItem>
+              <SelectItem value="2">option</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 

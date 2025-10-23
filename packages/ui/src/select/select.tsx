@@ -275,25 +275,28 @@ function SelectItem({
   };
 
   return (
-    <button
-      type="button"
+    <Button
       role="option"
       aria-selected={isSelected}
       disabled={disabled}
       onClick={handleSelect}
       data-slot="select-option"
+      variant="text"
+      size={size}
       className={cn(
+        'justify-start',
         selectOptionVariants({ size }),
         isSelected ? 'text-blue-600' : 'text-gray-800',
         disabled
           ? 'cursor-not-allowed text-gray-300'
-          : 'hover:bg-gray-200 active:bg-gray-300 cursor-pointer',
+          : 'hover:bg-gray-200 hover:text-gray-800 active:bg-gray-300 active:text-gray-800 cursor-pointer',
+        isSelected && 'hover:text-blue-600 active:text-blue-600',
         className
       )}
       {...props}
     >
       {children}
-    </button>
+    </Button>
   );
 }
 

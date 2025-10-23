@@ -1,4 +1,5 @@
 import { colors, typography } from '@redotlabs/tokens';
+// import { pretendard } from '@redotlabs/fonts/pretendard';
 import type { Config } from 'tailwindcss';
 
 export default {

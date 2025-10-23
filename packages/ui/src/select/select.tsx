@@ -131,7 +131,7 @@ function Select({
   }, [open, handleOpenChange]);
 
   return (
-    <SelectContext.Provider
+    <SelectContext
       value={{
         value,
         onValueChange,
@@ -146,7 +146,7 @@ function Select({
       <div ref={wrapperRef} className="relative">
         {children}
       </div>
-    </SelectContext.Provider>
+    </SelectContext>
   );
 }
 

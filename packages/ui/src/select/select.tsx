@@ -162,9 +162,7 @@ function SelectTrigger({ className, children, ...props }: SelectTriggerProps) {
   const { open, setOpen, size, disabled } = useSelectContext();
 
   const handleToggle = () => {
-    if (!disabled) {
-      setOpen(!open);
-    }
+    setOpen(!open);
   };
 
   return (

@@ -8,6 +8,8 @@ import {
 } from './select';
 import { selectVariantsOptions } from './select.variants';
 import { Meta } from '@storybook/react-vite';
+import { Button } from '../button';
+import { ChevronDown } from 'lucide-react';
 
 const meta: Meta<typeof Select> = {
   title: 'Components/Select',
@@ -54,7 +56,7 @@ export default meta;
 const DefaultComponent = (args: typeof Default.args) => {
   const [value, setValue] = useState('');
   return (
-    <div style={{ minHeight: '200px', width: '200px' }}>
+    <div style={{ minHeight: '200px', width: '150px' }}>
       <Select
         value={value}
         onValueChange={setValue}
@@ -169,36 +171,32 @@ export const Open = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">true</span>
         <div className="relative w-[150px]">
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] rotate-180 transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown
+              size={26}
+              className="rotate-180 transition-transform shrink-0"
+            />
+          </Button>
           <div className="absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden p-1.5 gap-1 rounded-[10px] mt-2">
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold transition-colors text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold transition-colors text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            </Button>
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -216,23 +214,14 @@ export const TriggerStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">enabled (default)</span>
         <div className="w-[150px]">
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown size={26} className="transition-transform shrink-0" />
+          </Button>
         </div>
       </div>
 
@@ -240,23 +229,14 @@ export const TriggerStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">hover</span>
         <div className="w-[150px]">
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-gray-100 border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-gray-100 text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown size={26} className="transition-transform shrink-0" />
+          </Button>
         </div>
       </div>
 
@@ -264,23 +244,14 @@ export const TriggerStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">pressed</span>
         <div className="w-[150px]">
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-gray-200 border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-gray-200 text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown size={26} className="transition-transform shrink-0" />
+          </Button>
         </div>
       </div>
 
@@ -313,36 +284,32 @@ export const OptionStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">default</span>
         <div className="relative w-[150px]" style={{ minHeight: '160px' }}>
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] rotate-180 transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown
+              size={26}
+              className="rotate-180 transition-transform shrink-0"
+            />
+          </Button>
           <div className="absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden p-1.5 gap-1 rounded-[10px] mt-2">
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 transition-colors hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 transition-colors hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            </Button>
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -351,36 +318,32 @@ export const OptionStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">hover</span>
         <div className="relative w-[150px]" style={{ minHeight: '160px' }}>
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] rotate-180 transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown
+              size={26}
+              className="rotate-180 transition-transform shrink-0"
+            />
+          </Button>
           <div className="absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden p-1.5 gap-1 rounded-[10px] mt-2">
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg bg-gray-200 text-gray-800 transition-colors cursor-pointer"
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg bg-gray-200 text-gray-800 cursor-pointer"
             >
               option
-            </button>
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 transition-colors hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            </Button>
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -389,36 +352,32 @@ export const OptionStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">selected</span>
         <div className="relative w-[150px]" style={{ minHeight: '160px' }}>
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] rotate-180 transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown
+              size={26}
+              className="rotate-180 transition-transform shrink-0"
+            />
+          </Button>
           <div className="absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden p-1.5 gap-1 rounded-[10px] mt-2">
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg text-blue-600 transition-colors hover:bg-gray-200 cursor-pointer"
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-blue-600 hover:bg-gray-200 cursor-pointer"
             >
               option
-            </button>
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 transition-colors hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            </Button>
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -427,36 +386,32 @@ export const OptionStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">selected/hover</span>
         <div className="relative w-[150px]" style={{ minHeight: '160px' }}>
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] rotate-180 transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown
+              size={26}
+              className="rotate-180 transition-transform shrink-0"
+            />
+          </Button>
           <div className="absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden p-1.5 gap-1 rounded-[10px] mt-2">
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg bg-gray-200 text-blue-600 transition-colors cursor-pointer"
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg bg-gray-200 text-blue-600 cursor-pointer"
             >
               option
-            </button>
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 transition-colors hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            </Button>
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -465,36 +420,32 @@ export const OptionStatus = {
       <div className="flex flex-col gap-2">
         <span className="text-xs text-gray-500">pressed</span>
         <div className="relative w-[150px]" style={{ minHeight: '160px' }}>
-          <button
-            type="button"
-            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          <Button
+            variant="text"
+            size="md"
+            className="w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 gap-6"
           >
             <span>select</span>
-            <svg
-              className="w-[26px] h-[26px] rotate-180 transition-transform shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
+            <ChevronDown
+              size={26}
+              className="rotate-180 transition-transform shrink-0"
+            />
+          </Button>
           <div className="absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden p-1.5 gap-1 rounded-[10px] mt-2">
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg bg-gray-300 text-gray-800 transition-colors cursor-pointer"
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg bg-gray-300 text-gray-800 cursor-pointer"
             >
               option
-            </button>
-            <button
-              type="button"
-              className="flex items-center w-full font-semibold text-left px-5 py-[5.5px] rounded-lg text-lg text-gray-800 transition-colors hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
+            </Button>
+            <Button
+              variant="text"
+              size="md"
+              className="justify-start px-5 py-[5.5px] rounded-lg text-lg text-gray-800 hover:bg-gray-200 active:bg-gray-300 cursor-pointer"
             >
               option
-            </button>
+            </Button>
           </div>
         </div>
       </div>

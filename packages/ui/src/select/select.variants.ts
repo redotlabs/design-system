@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 export const selectVariantsOptions = {
-  base: 'w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 hover:bg-white hover:text-gray-800 active:bg-white active:text-gray-800 disabled:bg-gray-100 disabled:text-gray-300 disabled:border-gray-300',
+  base: 'w-full border border-solid border-gray-300 justify-between bg-white text-gray-800 hover:bg-gray-100 active:bg-gray-200 disabled:bg-gray-100 disabled:text-gray-300 disabled:border-gray-300',
 
   variants: {
     size: {

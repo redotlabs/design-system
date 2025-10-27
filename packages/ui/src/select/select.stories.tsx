@@ -209,7 +209,104 @@ export const Open = {
   },
 };
 
-export const Status = {
+export const TriggerStatus = {
+  render: () => (
+    <div className="flex items-start gap-4">
+      {/* enabled (default) */}
+      <div className="flex flex-col gap-2">
+        <span className="text-xs text-gray-500">enabled (default)</span>
+        <div className="w-[150px]">
+          <button
+            type="button"
+            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-white border border-gray-300 font-semibold text-gray-800"
+          >
+            <span>select</span>
+            <svg
+              className="w-[26px] h-[26px] transition-transform shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* hover */}
+      <div className="flex flex-col gap-2">
+        <span className="text-xs text-gray-500">hover</span>
+        <div className="w-[150px]">
+          <button
+            type="button"
+            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-gray-100 border border-gray-300 font-semibold text-gray-800"
+          >
+            <span>select</span>
+            <svg
+              className="w-[26px] h-[26px] transition-transform shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* pressed */}
+      <div className="flex flex-col gap-2">
+        <span className="text-xs text-gray-500">pressed</span>
+        <div className="w-[150px]">
+          <button
+            type="button"
+            className="inline-flex items-center justify-between w-full h-12 text-lg px-5 py-[13px] rounded-[10px] gap-6 bg-gray-200 border border-gray-300 font-semibold text-gray-800"
+          >
+            <span>select</span>
+            <svg
+              className="w-[26px] h-[26px] transition-transform shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* disabled */}
+      <div className="flex flex-col gap-2">
+        <span className="text-xs text-gray-500">disabled</span>
+        <div className="w-[150px]">
+          <Select disabled>
+            <SelectTrigger>
+              <SelectValue placeholder="select" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="1">option</SelectItem>
+              <SelectItem value="2">option</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+    </div>
+  ),
+  parameters: {
+    layout: 'padded',
+  },
+};
+
+export const OptionStatus = {
   render: () => (
     <div className="flex items-start gap-4">
       {/* default */}

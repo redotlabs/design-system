@@ -6,6 +6,7 @@
     "declarationMap": true,
     "incremental": true,
     "tsBuildInfoFile": "./dist/.tsbuildinfo",
+    "skipLibCheck": true,
     "types": []
   },
   "include": ["src/**/*"],

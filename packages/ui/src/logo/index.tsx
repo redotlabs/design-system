@@ -1,12 +1,9 @@
-import LogoText from './logo-text';
+import Text from './logo';
 import Symbol from './symbol';
-import { ComponentProps } from 'react';
 
-export interface LogoProps extends ComponentProps<'svg'> {
-  type?: 'logo' | 'symbol';
-}
+const Logo = Object.assign(Text, {
+  Text,
+  Symbol,
+});
 
-export function Logo({ type = 'logo', ...props }: LogoProps) {
-  if (type === 'logo') return <LogoText {...props} />;
-  return <Symbol {...props} />;
-}
+export { Logo };

@@ -4,7 +4,7 @@ import { cva } from 'class-variance-authority';
 export const checkboxVariantsOptions = {
   base: cn(
     // default
-    'appearance-none border border-2 border-gray-300 transition-all cursor-pointer shrink-0 outline-none',
+    'appearance-none border-2 border-gray-300 transition-all cursor-pointer shrink-0 outline-none',
     // checked
     'checked:bg-primary-500 checked:border-primary-500',
     // disabled(default)
@@ -26,8 +26,7 @@ export const checkboxVariantsOptions = {
   },
 
   defaultVariants: {
-    variant: 'default' as const,
-    size: 'md' as const,
+    size: 'md',
   },
 } as const;
 

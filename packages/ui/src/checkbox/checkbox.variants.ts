@@ -66,5 +66,8 @@ export const checkboxIconVariants = cva(
         lg: 'size-4.5',
       },
     },
+    defaultVariants: {
+      size: 'md',
+    },
   }
 );

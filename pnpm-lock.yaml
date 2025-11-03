@@ -242,9 +242,6 @@ importers:
       '@redotlabs/utils':
         specifier: workspace:*
         version: link:../utils
-      '@svgr/core':
-        specifier: ^8.1.0
-        version: 8.1.0(typescript@5.8.3)
       '@types/node':
         specifier: ^24.0.15
         version: 24.0.15
@@ -258,8 +255,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0
       esbuild-plugin-svgr:
-        specifier: ^2.1.0
-        version: 2.1.0(esbuild@0.25.7)(typescript@5.8.3)
+        specifier: ^3.1.1
+        version: 3.1.1(esbuild@0.25.7)(typescript@5.8.3)
       prop-types:
         specifier: ^15.8.1
         version: 15.8.1
@@ -1749,10 +1746,10 @@ packages:
   es-module-lexer@1.7.0:
     resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
 
-  esbuild-plugin-svgr@2.1.0:
-    resolution: {integrity: sha512-BKJOlQvXjLipPDPYfX+N6i2tPxSuVOhlg+hEF/nkQwMwFV6IymvuCRO0wLvf9tGyL3mc3yIZ4n9pfxcCx/7v2Q==}
+  esbuild-plugin-svgr@3.1.1:
+    resolution: {integrity: sha512-P0GVOTvmCMFUktRuIyjrUkx5C1VDZZH7VOFvtboQpWUG93eAvYyXPFf90kUMW9HMaTsRGpRrRoUmJ29PlQ0kLw==}
     peerDependencies:
-      esbuild: ^0.19.1
+      esbuild: ^0.25.2
 
   esbuild-register@3.6.0:
     resolution: {integrity: sha512-H2/S7Pm8a9CL1uhp9OvjwrBh5Pvx0H8qVOxNu8Wed9Y7qv56MPtq+GGM8RJpq6glYJn9Wspr8uw7l55uyinNeg==}
@@ -5005,7 +5002,7 @@ snapshots:
 
   es-module-lexer@1.7.0: {}
 
-  esbuild-plugin-svgr@2.1.0(esbuild@0.25.7)(typescript@5.8.3):
+  esbuild-plugin-svgr@3.1.1(esbuild@0.25.7)(typescript@5.8.3):
     dependencies:
       '@svgr/core': 8.1.0(typescript@5.8.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.8.3))

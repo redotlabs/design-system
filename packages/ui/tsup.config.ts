@@ -6,6 +6,7 @@ export default defineConfig({
     '!src/**/*.test.*',
     '!src/**/*.stories.*',
     '!src/**/*.schema.*',
+    '!src/vite-env.d.ts',
   ],
   format: ['esm', 'cjs'],
   dts: true,

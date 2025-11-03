@@ -14,19 +14,46 @@ const meta: Meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    type: {
+    Component: {
       control: {
         type: 'inline-radio',
       },
-      defaultValue: 'logo',
+      defaultValue: 'Logo.Text',
       table: {
         type: {
-          summary: 'logo | symbol',
+          summary: 'Logo.Text | Logo.Symbol',
         },
-        defaultValue: { summary: 'logo' },
+        defaultValue: { summary: 'Logo.Text' },
       },
-      description: 'The type of the Logo',
-      options: ['logo', 'symbol'],
+      options: ['Logo.Text', 'Logo.Symbol'],
+    },
+    variant: {
+      control: {
+        type: 'inline-radio',
+      },
+      defaultValue: 'base',
+      description: 'The variant of the Logo Symbol',
+      table: {
+        type: {
+          summary: 'base | solid | 3d',
+        },
+        defaultValue: { summary: 'base' },
+      },
+      options: ['base', 'solid', '3d'],
+    },
+    color: {
+      control: {
+        type: 'inline-radio',
+      },
+      defaultValue: 'color',
+      description: 'The color of the Logo',
+      table: {
+        type: {
+          summary: 'color | mono',
+        },
+        defaultValue: { summary: 'color' },
+      },
+      options: ['color', 'mono'],
     },
   },
 };
@@ -35,9 +62,18 @@ export default meta;
 
 export const Default = {
   args: {
-    type: 'logo',
+    Component: 'Logo.Text',
   },
   render: (args) => {
-    return <Logo {...args} className="h-16" />;
+    const { Component, variant, color } = args;
+    return (
+      <div className="flex gap-8">
+        {Component === 'Logo.Text' ? (
+          <Logo.Text className="w-full h-16" color={color} />
+        ) : (
+          <Logo.Symbol className="w-full h-16" variant={variant} />
+        )}
+      </div>
+    );
   },
 };

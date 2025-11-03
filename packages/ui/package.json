@@ -57,10 +57,12 @@
     "@redotlabs/themes": "workspace:*",
     "@redotlabs/tokens": "workspace:*",
     "@redotlabs/utils": "workspace:*",
+    "@svgr/core": "^8.1.0",
     "@types/node": "^24.0.15",
     "@types/react": "^19.1.8",
     "@vitejs/plugin-react": "^4.7.0",
     "clean-package": "^2.2.0",
+    "esbuild-plugin-svgr": "^2.1.0",
     "prop-types": "^15.8.1"
   },
   "peerDependencies": {

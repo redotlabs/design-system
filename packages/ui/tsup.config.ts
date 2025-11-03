@@ -1,4 +1,5 @@
 import { defineConfig } from 'tsup';
+import svgr from 'esbuild-plugin-svgr';
 
 export default defineConfig({
   entry: [
@@ -6,6 +7,10 @@ export default defineConfig({
     '!src/**/*.test.*',
     '!src/**/*.stories.*',
     '!src/**/*.schema.*',
+    '!src/**/*.svg',
+    '!src/**/*.png',
+    '!src/**/*.jpg',
+    '!src/**/*.jpeg',
     '!src/vite-env.d.ts',
   ],
   format: ['esm', 'cjs'],
@@ -13,4 +18,5 @@ export default defineConfig({
   clean: true,
   outDir: 'dist',
   target: 'es2020',
+  esbuildPlugins: [svgr({ exportType: 'default' })],
 });

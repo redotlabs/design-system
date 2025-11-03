@@ -1,5 +1,11 @@
 # @redotlabs/ui
 
+## 1.4.0
+
+### Minor Changes
+
+- 54ca1f6: enhancement logo component
+
 ## 1.3.0
 
 ### Minor Changes

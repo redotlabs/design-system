@@ -44,7 +44,7 @@
     "clean-package": "^2.2.0"
   },
   "peerDependencies": {
-    "@redotlabs/tokens": ">=1.0.0",
+    "@redotlabs/tokens": ">=1.0.1",
     "@redotlabs/fonts": ">=1.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

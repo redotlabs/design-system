@@ -1,5 +1,11 @@
 # @redotlabs/ui
 
+## 1.4.1
+
+### Patch Changes
+
+- 30b255d: fix logo component import error
+
 ## 1.4.0
 
 ### Minor Changes

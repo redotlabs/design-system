@@ -21,7 +21,7 @@
     "generate:ui": "plop ui",
     "changeset": "changeset",
     "changeset:version": "changeset version",
-    "ci:publish": "pnpm publish -r",
+    "ci:publish": "pnpm publish -r --no-git-checks",
     "release": "pnpm build && pnpm changeset:version && pnpm install && pnpm ci:publish",
     "upload-database:dev": "NODE_ENV=development node scripts/upload-database.js",
     "upload-database:prod": "NODE_ENV=production node scripts/upload-database.js",

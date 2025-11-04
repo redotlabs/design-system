@@ -1,5 +1,11 @@
 # @redotlabs/ui
 
+## 1.5.0
+
+### Minor Changes
+
+- fc6f2d9: add checkbox, radio component
+
 ## 1.4.1
 
 ### Patch Changes

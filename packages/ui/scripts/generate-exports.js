@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-const ONLY_COMPONENTS_EXPORT_IGNORE_LIST = ['logo', 'toast'];
+const ONLY_COMPONENTS_EXPORT_IGNORE_LIST = ['logo', 'toast', 'popover'];
 
 function convertComponentName(dirName) {
   if (!dirName) throw new Error('Directory name is required');

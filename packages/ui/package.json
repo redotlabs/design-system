@@ -49,8 +49,10 @@
     "registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.1.15",
     "class-variance-authority": "^0.7.1",
     "framer-motion": "^12.23.24",
+    "react-day-picker": "^9.11.1",
     "sonner": "^2.0.7"
   },
   "devDependencies": {

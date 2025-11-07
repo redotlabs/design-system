@@ -24,7 +24,7 @@ export const inputWrapperVariantsOptions = {
 
 export const inputVariantsOptions = {
   base: cn(
-    'placeholder:text-gray-300 selection:bg-primary selection:text-primary-foreground bg-transparent border-none flex-1 min-w-0 outline-none',
+    'placeholder:text-gray-300 bg-transparent border-none flex-1 min-w-0 outline-none',
     'disabled:text-gray-300'
   ),
 

@@ -70,6 +70,14 @@ function DatePicker({
     }
   };
 
+  const handleSelect = (selectedDate: Date) => {
+    setValue?.(selectedDate);
+    setDateString(formatDate(selectedDate));
+    setDate(selectedDate);
+    setMonth(selectedDate);
+    setOpen(false);
+  };
+
   return (
     <div data-slot="datepicker">
       <Input
@@ -114,11 +122,7 @@ function DatePicker({
                 endMonth={new Date(2100, 11, 31)}
                 month={month}
                 onMonthChange={setMonth}
-                onSelect={(date) => {
-                  setValue?.(date);
-                  setDateString(formatDate(date));
-                  setOpen(false);
-                }}
+                onSelect={handleSelect}
                 {...calendarProps}
               />
             </PopoverContent>

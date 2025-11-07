@@ -6,7 +6,7 @@ import { Calendar, type CalendarProps } from '../calendar';
 import { Popover, PopoverTrigger, PopoverContent } from '../popover';
 import { cn } from '@redotlabs/utils';
 
-interface DatepickerProps
+interface DatePickerProps
   extends Omit<InputProps, 'value' | 'defaultValue' | 'onChange'> {
   defaultValue?: Date | undefined;
   setValue?: (value: Date | undefined) => void;
@@ -45,13 +45,13 @@ function formatDateString(v: string) {
   return `${v.slice(0, 4)}-${v.slice(4, 6)}-${v.slice(6, 8)}`;
 }
 
-function Datepicker({
+function DatePicker({
   defaultValue = new Date(),
   setValue,
   disabled,
   calendarProps = {},
   ...props
-}: DatepickerProps) {
+}: DatePickerProps) {
   const [open, setOpen] = useState(false);
   const [month, setMonth] = useState<Date | undefined>(defaultValue);
   const [date, setDate] = useState<Date | undefined>(defaultValue);
@@ -130,5 +130,5 @@ function Datepicker({
   );
 }
 
-export { Datepicker };
-export type { DatepickerProps };
+export { DatePicker };
+export type { DatePickerProps };

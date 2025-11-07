@@ -1,18 +1,18 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import { Datepicker } from './datepicker';
+import { DatePicker } from './date-picker';
 import userEvent from '@testing-library/user-event';
 
-describe('Datepicker', () => {
+describe('DatePicker', () => {
   it('renders with placeholder', () => {
-    render(<Datepicker />);
+    render(<DatePicker />);
     const input = screen.getByPlaceholderText('yyyy-mm-dd');
     expect(input).toBeDefined();
   });
 
   it('renders with initial value', () => {
     const testDate = new Date(2025, 10, 7); // 2025-11-07
-    render(<Datepicker defaultValue={testDate} />);
+    render(<DatePicker defaultValue={testDate} />);
     const input = screen.getByDisplayValue('2025-11-07') as HTMLInputElement;
     expect(input).toBeDefined();
     expect(input.value).toBe('2025-11-07');
@@ -20,7 +20,7 @@ describe('Datepicker', () => {
 
   it('formats date correctly', () => {
     const testDate = new Date(2025, 10, 7); // 2025-11-07
-    render(<Datepicker defaultValue={testDate} />);
+    render(<DatePicker defaultValue={testDate} />);
     const input = screen.getByDisplayValue('2025-11-07') as HTMLInputElement;
     expect(input.value).toBe('2025-11-07');
   });
@@ -28,7 +28,7 @@ describe('Datepicker', () => {
   it('calls setValue when input changes with valid date', async () => {
     const setValue = vi.fn();
     render(
-      <Datepicker defaultValue={new Date(2024, 0, 1)} setValue={setValue} />
+      <DatePicker defaultValue={new Date(2024, 0, 1)} setValue={setValue} />
     );
 
     const input = screen.getByPlaceholderText('yyyy-mm-dd') as HTMLInputElement;
@@ -42,7 +42,7 @@ describe('Datepicker', () => {
 
   it('formats input as user types', async () => {
     const user = userEvent.setup();
-    render(<Datepicker />);
+    render(<DatePicker />);
 
     const input = screen.getByPlaceholderText('yyyy-mm-dd') as HTMLInputElement;
 
@@ -54,7 +54,7 @@ describe('Datepicker', () => {
 
   it('does not call setValue for invalid date', () => {
     const setValue = vi.fn();
-    render(<Datepicker setValue={setValue} />);
+    render(<DatePicker setValue={setValue} />);
 
     const input = screen.getByPlaceholderText('yyyy-mm-dd') as HTMLInputElement;
 
@@ -64,7 +64,7 @@ describe('Datepicker', () => {
   });
 
   it('opens popover when calendar button is clicked', async () => {
-    render(<Datepicker />);
+    render(<DatePicker />);
 
     const button = screen.getByRole('button', { name: 'Open date picker' });
     fireEvent.click(button);
@@ -76,7 +76,7 @@ describe('Datepicker', () => {
   });
 
   it('opens popover when ArrowDown key is pressed', async () => {
-    render(<Datepicker />);
+    render(<DatePicker />);
 
     const input = screen.getByPlaceholderText('yyyy-mm-dd');
     fireEvent.keyDown(input, { key: 'ArrowDown' });
@@ -88,14 +88,14 @@ describe('Datepicker', () => {
   });
 
   it('supports disabled state', () => {
-    render(<Datepicker disabled />);
+    render(<DatePicker disabled />);
     const input = screen.getByPlaceholderText('yyyy-mm-dd') as HTMLInputElement;
     expect(input.disabled).toBe(true);
   });
 
   it('handles undefined value', () => {
     const date = new Date();
-    render(<Datepicker defaultValue={date} />);
+    render(<DatePicker defaultValue={date} />);
     const input = screen.getByPlaceholderText('yyyy-mm-dd') as HTMLInputElement;
     expect(input.value).toBe(date.toISOString().split('T')[0]);
   });
@@ -105,7 +105,7 @@ describe('Datepicker', () => {
     const todayString = today.toLocaleDateString();
 
     render(
-      <Datepicker
+      <DatePicker
         calendarProps={{
           disabled: (date) => date.toLocaleDateString() === todayString,
         }}

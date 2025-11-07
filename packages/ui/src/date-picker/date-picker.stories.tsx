@@ -1,9 +1,9 @@
-import { Datepicker } from './datepicker';
+import { DatePicker } from './date-picker';
 import { Meta } from '@storybook/react-vite';
 
-const meta: Meta<typeof Datepicker> = {
-  title: 'Components/Datepicker',
-  component: Datepicker,
+const meta: Meta<typeof DatePicker> = {
+  title: 'Components/DatePicker',
+  component: DatePicker,
   parameters: {
     layout: 'centered',
     docs: {
@@ -32,5 +32,5 @@ export const Default = {
   args: {
     disabled: false,
   },
-  render: (args) => <Datepicker {...args} />,
+  render: (args) => <DatePicker {...args} />,
 };

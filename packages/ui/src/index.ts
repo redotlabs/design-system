@@ -2,7 +2,7 @@ export * from './badge';
 export * from './button';
 export * from './calendar';
 export * from './checkbox';
-export * from './datepicker';
+export * from './date-picker';
 export * from './input';
 export * from './logo';
 export * from './popover';

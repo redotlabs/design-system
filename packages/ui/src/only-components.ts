@@ -2,6 +2,7 @@ export { Badge } from './badge';
 export { Button } from './button';
 export { Checkbox } from './checkbox';
 export { Input } from './input';
+export { Pagination } from './pagination';
 export { Radio } from './radio';
 export {
   Select,

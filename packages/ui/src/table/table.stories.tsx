@@ -1,4 +1,5 @@
 import { Badge } from '../badge';
+import { Pagination } from '../pagination';
 import {
   Table,
   TableBody,
@@ -67,43 +68,55 @@ const tableData = [
 export const Default = {
   args: {},
   render: (args) => (
-    <Table {...args} className="min-w-[600px]">
-      <TableHeader>
-        <TableRow>
-          <TableHead>Order</TableHead>
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Phone</TableHead>
-          <TableHead>Status</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {tableData.map((item) => (
-          <TableRow key={item.order}>
-            <TableCell align="center">{item.order}</TableCell>
-            <TableCell align="center">{item.name}</TableCell>
-            <TableCell align="center">{item.email}</TableCell>
-            <TableCell align="center">{item.phone}</TableCell>
-            <TableCell align="center">
-              <Badge
-                color={
-                  (
-                    {
-                      active: 'info',
-                      inactive: 'danger',
-                      success: 'success',
-                    } as const
-                  )[item.status.toLowerCase()]
-                }
-                size="sm"
-              >
-                {item.status}
-              </Badge>
-            </TableCell>
+    <div>
+      <Table {...args} className="min-w-[600px]">
+        <TableHeader>
+          <TableRow>
+            <TableHead>Order</TableHead>
+            <TableHead>Name</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Phone</TableHead>
+            <TableHead>Status</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {tableData.map((item) => (
+            <TableRow key={item.order}>
+              <TableCell align="center">{item.order}</TableCell>
+              <TableCell align="center">{item.name}</TableCell>
+              <TableCell align="center">{item.email}</TableCell>
+              <TableCell align="center">{item.phone}</TableCell>
+              <TableCell align="center">
+                <Badge
+                  color={
+                    (
+                      {
+                        active: 'info',
+                        inactive: 'danger',
+                        success: 'success',
+                      } as const
+                    )[item.status.toLowerCase()]
+                  }
+                  size="sm"
+                >
+                  {item.status}
+                </Badge>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+
+      <Pagination
+        className="mt-4"
+        totalPages={10}
+        currentPage={1}
+        onPrevious={() => {}}
+        onNext={() => {}}
+        onPageChange={() => {}}
+        hasPrevious={false}
+      />
+    </div>
   ),
 };
 

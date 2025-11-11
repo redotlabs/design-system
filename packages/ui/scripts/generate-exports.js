@@ -1,6 +1,33 @@
 import * as fs from 'fs';
 
+// ? only-components.ts에서 제외할 컴포넌트를 추가해주세요.
 const ONLY_COMPONENTS_EXPORT_IGNORE_LIST = ['logo', 'toast', 'popover'];
+
+// ? 여러 개의 컴포넌트를 export하는 경우 추가해주세요.
+const MANY_COMPONENTS_EXPORT_LIST = [
+  {
+    name: 'select',
+    components: [
+      'Select',
+      'SelectTrigger',
+      'SelectValue',
+      'SelectContent',
+      'SelectItem',
+    ],
+  },
+  {
+    name: 'table',
+    components: [
+      'Table',
+      'TableHeader',
+      'TableHead',
+      'TableBody',
+      'TableRow',
+      'TableCell',
+      'TableFooter',
+    ],
+  },
+];
 
 function convertComponentName(dirName) {
   if (!dirName) throw new Error('Directory name is required');
@@ -18,6 +45,13 @@ function extractComponentName(dirName) {
 
   if (!fs.existsSync(componentFilePath)) {
     return convertComponentName(dirName);
+  }
+
+  const exceptionComponent = MANY_COMPONENTS_EXPORT_LIST.find(
+    (component) => component.name === dirName
+  );
+  if (exceptionComponent) {
+    return exceptionComponent.components.join(', ');
   }
 
   const content = fs.readFileSync(componentFilePath, 'utf-8');

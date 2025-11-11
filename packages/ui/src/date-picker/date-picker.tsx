@@ -84,7 +84,6 @@ function DatePicker({
         type="text"
         size="sm"
         value={dateString}
-        defaultValue={dateString}
         disabled={disabled}
         placeholder="yyyy-mm-dd"
         onChange={handleChange}
@@ -118,7 +117,7 @@ function DatePicker({
                 mode="single"
                 selected={date}
                 captionLayout="dropdown"
-                startMonth={new Date(2000, 0, 1)}
+                startMonth={new Date(1900, 0, 1)}
                 endMonth={new Date(2100, 11, 31)}
                 month={month}
                 onMonthChange={setMonth}

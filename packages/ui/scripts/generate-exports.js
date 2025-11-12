@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
 // ? only-components.ts에서 제외할 컴포넌트를 추가해주세요.
-const ONLY_COMPONENTS_EXPORT_IGNORE_LIST = ['logo', 'toast'];
+const ONLY_COMPONENTS_EXPORT_IGNORE_LIST = ['logo', 'toast', 'popover'];
 
 // ? 여러 개의 컴포넌트를 export하는 경우 추가해주세요.
 const MANY_COMPONENTS_EXPORT_LIST = [

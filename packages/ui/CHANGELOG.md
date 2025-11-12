@@ -1,5 +1,17 @@
 # @redotlabs/ui
 
+## 1.6.0
+
+### Minor Changes
+
+- 4aed1a3: add Table component with Pagination component
+
+### Patch Changes
+
+- 34f8204: remove input selection background color
+- 33062a2: enable button cursor-not-allowd when button is disabled
+- d320949: add datepicker component with calendar, popover component
+
 ## 1.5.0
 
 ### Minor Changes

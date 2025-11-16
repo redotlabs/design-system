@@ -1,10 +1,27 @@
 import { cn } from '@redotlabs/utils';
 import { CircleCheck, CircleX, TriangleAlert } from 'lucide-react';
-import { Toaster as Sonner, ToasterProps } from 'sonner';
+import { Toaster as Sonner, ToasterProps as SonnerToasterProps } from 'sonner';
 import { toast } from 'sonner';
 import { createPortal } from 'react-dom';
+import { useLayoutEffect, useState } from 'react';
 
-const Toaster = ({ className, ...props }: ToasterProps) => {
+interface ToasterProps extends SonnerToasterProps {
+  container?: Element | DocumentFragment | null;
+}
+
+const Toaster = ({
+  className,
+  container: containerProp,
+  ...props
+}: ToasterProps) => {
+  const [mounted, setMounted] = useState(false);
+
+  useLayoutEffect(() => setMounted(true), []);
+
+  const container = containerProp || (mounted && globalThis?.document?.body);
+
+  if (!container) return null;
+
   return createPortal(
     <Sonner
       className={cn('toaster group flex items-center gap-2!', className)}
@@ -23,7 +40,7 @@ const Toaster = ({ className, ...props }: ToasterProps) => {
       }}
       {...props}
     />,
-    document.body
+    container
   );
 };
 

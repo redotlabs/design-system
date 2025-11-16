@@ -22,3 +22,4 @@ export {
   TableCell,
   TableFooter,
 } from './table';
+export { Textarea } from './textarea';

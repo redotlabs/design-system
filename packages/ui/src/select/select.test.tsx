@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import {
   Select,
@@ -73,7 +73,7 @@ describe('Select', () => {
     expect(screen.getByRole('listbox')).toBeDefined();
   });
 
-  it('closes dropdown after selecting an option', () => {
+  it('closes dropdown after selecting an option', async () => {
     render(
       <Select>
         <SelectTrigger>
@@ -91,7 +91,9 @@ describe('Select', () => {
     const option = screen.getByText('Option 2');
     fireEvent.click(option);
 
-    expect(screen.queryByRole('listbox')).toBeNull();
+    await waitFor(() => {
+      expect(screen.queryByRole('listbox')).toBeNull();
+    });
   });
 
   it('selects an option and calls onValueChange', () => {
@@ -117,7 +119,7 @@ describe('Select', () => {
     expect(handleChange).toHaveBeenCalledWith('2');
   });
 
-  it('displays selected value', () => {
+  it('displays selected value', async () => {
     render(
       <Select value="2">
         <SelectTrigger>
@@ -136,7 +138,9 @@ describe('Select', () => {
     const option = screen.getByText('Option 2');
     fireEvent.click(option);
 
-    expect(screen.getByText('Option 2')).toBeDefined();
+    await waitFor(() => {
+      expect(screen.getByText('Option 2')).toBeDefined();
+    });
   });
 
   it('disables select when disabled prop is true', () => {
@@ -177,7 +181,7 @@ describe('Select', () => {
     expect((disabledOption as HTMLButtonElement).disabled).toBe(true);
   });
 
-  it('closes dropdown on outside click', () => {
+  it('closes dropdown on outside click', async () => {
     render(
       <div>
         <Select>
@@ -198,10 +202,12 @@ describe('Select', () => {
 
     const outsideButton = screen.getByRole('button', { name: /outside/i });
     fireEvent.mouseDown(outsideButton);
-    expect(screen.queryByRole('listbox')).toBeNull();
+    await waitFor(() => {
+      expect(screen.queryByRole('listbox')).toBeNull();
+    });
   });
 
-  it('closes dropdown on ESC key', () => {
+  it('closes dropdown on ESC key', async () => {
     render(
       <Select>
         <SelectTrigger>
@@ -218,7 +224,9 @@ describe('Select', () => {
     expect(screen.getByRole('listbox')).toBeDefined();
 
     fireEvent.keyDown(document, { key: 'Escape' });
-    expect(screen.queryByRole('listbox')).toBeNull();
+    await waitFor(() => {
+      expect(screen.queryByRole('listbox')).toBeNull();
+    });
   });
 
   it('merges custom className on trigger', () => {

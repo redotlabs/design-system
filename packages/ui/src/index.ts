@@ -10,4 +10,5 @@ export * from './popover';
 export * from './radio';
 export * from './select';
 export * from './table';
+export * from './textarea';
 export * from './toast';

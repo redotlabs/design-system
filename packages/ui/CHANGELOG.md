@@ -1,5 +1,16 @@
 # @redotlabs/ui
 
+## 1.7.0
+
+### Minor Changes
+
+- 8c74bd8: add textarea component
+
+### Patch Changes
+
+- 59192de: fix for failed select test case
+- f6b7ef3: fix document not found in toaster component when SSR
+
 ## 1.6.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @redotlabs/sdui-renderer
 
+## 2.0.3
+
+### Patch Changes
+
+- Updated dependencies [8c74bd8]
+- Updated dependencies [59192de]
+- Updated dependencies [f6b7ef3]
+  - @redotlabs/ui@1.7.0
+
 ## 2.0.2
 
 ### Patch Changes

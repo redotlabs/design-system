@@ -64,7 +64,7 @@ export const Sizes = {
     placeholder: 'Enter text...',
   },
   render: (args) => (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-col items-center gap-4 w-96">
       <Textarea {...args} size="sm" />
       <Textarea {...args} size="md" />
       <Textarea {...args} size="lg" />

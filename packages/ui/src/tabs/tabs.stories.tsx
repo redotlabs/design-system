@@ -51,9 +51,7 @@ export const Default = {
   render: function Render(args) {
     const [activeTab, setActiveTab] = useState(0);
     const handleTabClick = (v: number) => {
-      document.startViewTransition(() => {
-        setActiveTab(v);
-      });
+      setActiveTab(v);
     };
     const isActive = (value: number) => activeTab === value;
     return (

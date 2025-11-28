@@ -13,7 +13,7 @@ const meta: Meta<typeof Callout> = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Redot  Component',
+        component: 'Redot Callout Component',
       },
     },
   },
@@ -36,19 +36,35 @@ const meta: Meta<typeof Callout> = {
       options: Object.keys(variants.color),
     },
     icon: {
+      table: { disable: true },
+    },
+    title: {
       control: {
-        type: 'object',
+        type: 'text',
       },
-      description: 'The icon of the Callout',
+      description: 'The title of the Callout',
+    },
+    content: {
+      control: {
+        type: 'text',
+      },
+      description: 'The content of the Callout',
     },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  // args: { onClick: fn() },
 };
 
 export default meta;
 
 export const Default = {
+  args: {
+    color: 'default',
+    icon: <Logo.Symbol className="size-6" />,
+    title: 'Default Callout',
+    content: 'This is a default callout',
+  },
+};
+
+export const Colors = {
   args: {},
   render: () => (
     <div className="flex flex-col gap-4">

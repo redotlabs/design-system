@@ -53,6 +53,9 @@ export const checkboxLabelVariants = cva(
         lg: 'ml-2.5 text-lg',
       },
     },
+    defaultVariants: {
+      size: 'md',
+    },
   }
 );
 

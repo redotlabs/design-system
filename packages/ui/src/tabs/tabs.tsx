@@ -45,6 +45,7 @@ function Tabs({ className, size, children, disabled, ...props }: TabsProps) {
 
 function Tab({ className, isActive, children, barProps, ...props }: TabProps) {
   const { size, disabled } = useContext(TabContext);
+  const { className: barClassName, ...restBarProps } = barProps || {};
 
   return (
     <Button
@@ -63,11 +64,8 @@ function Tab({ className, isActive, children, barProps, ...props }: TabProps) {
       {isActive && (
         <div
           data-slot="tab-bar"
-          className={cn(
-            tabBarVariants({ size, disabled }),
-            barProps?.className
-          )}
-          {...barProps}
+          className={cn(tabBarVariants({ size, disabled }), barClassName)}
+          {...restBarProps}
         />
       )}
     </Button>

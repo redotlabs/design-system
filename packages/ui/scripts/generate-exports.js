@@ -27,6 +27,10 @@ const MANY_COMPONENTS_EXPORT_LIST = [
       'TableFooter',
     ],
   },
+  {
+    name: 'tabs',
+    components: ['Tabs', 'Tab'],
+  },
 ];
 
 function convertComponentName(dirName) {

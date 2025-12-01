@@ -1,6 +1,6 @@
 # @redotlabs/sdui-renderer
 
-## 3.0.0
+## 2.0.4
 
 ### Patch Changes
 

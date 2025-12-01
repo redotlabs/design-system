@@ -1,6 +1,7 @@
 export * from './badge';
 export * from './button';
 export * from './calendar';
+export * from './callout';
 export * from './checkbox';
 export * from './date-picker';
 export * from './input';

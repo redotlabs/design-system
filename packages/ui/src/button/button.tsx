@@ -4,13 +4,9 @@ import { cn } from '@redotlabs/utils';
 import { buttonVariants } from './button.variants';
 
 type ButtonVariants = VariantProps<typeof buttonVariants>;
+type ButtonProps = ComponentProps<'button'> & ButtonVariants;
 
-function Button({
-  className,
-  variant,
-  size,
-  ...props
-}: ComponentProps<'button'> & ButtonVariants) {
+function Button({ className, variant, size, ...props }: ButtonProps) {
   return (
     <button
       type="button"
@@ -22,4 +18,4 @@ function Button({
 }
 
 export { Button, buttonVariants };
-export type { ButtonVariants };
+export type { ButtonVariants, ButtonProps };

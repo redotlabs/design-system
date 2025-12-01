@@ -23,4 +23,5 @@ export {
   TableCell,
   TableFooter,
 } from './table';
+export { Tabs, Tab } from './tabs';
 export { Textarea } from './textarea';

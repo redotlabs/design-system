@@ -1,5 +1,16 @@
 # @redotlabs/ui
 
+## 1.8.0
+
+### Minor Changes
+
+- f104065: add tabs component and add ButtonProps type
+- 25ea1e8: add callout component
+
+### Patch Changes
+
+- f1a97c1: set default size variant for checkbox component
+
 ## 1.7.0
 
 ### Minor Changes

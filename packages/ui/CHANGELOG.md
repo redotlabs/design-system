@@ -1,5 +1,11 @@
 # @redotlabs/ui
 
+## 1.8.1
+
+### Patch Changes
+
+- 5eb76d3: add asChild prop for button component
+
 ## 1.8.0
 
 ### Minor Changes

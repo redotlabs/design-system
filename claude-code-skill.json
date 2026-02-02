@@ -1,0 +1,481 @@
+{
+  "name": "Redot Design System",
+  "version": "1.8.1",
+  "description": "A comprehensive React-based design system monorepo providing UI components, design tokens, themes, and utilities for building consistent user interfaces in Redot's projects.",
+  "repository": "https://github.com/redotlabs/design-system",
+  "documentation": "https://storybook.redot.me",
+  
+  "metadata": {
+    "technologies": ["React 19", "TypeScript", "Tailwind CSS 4", "Vite", "pnpm", "Turbo", "Storybook 9"],
+    "packageManager": "pnpm 10.6.1",
+    "license": "ISC",
+    "registry": "https://npm.pkg.github.com"
+  },
+
+  "packages": {
+    "@redotlabs/ui": {
+      "version": "1.8.1",
+      "description": "Core UI component library with 16+ production-ready React components",
+      "components": [
+        {
+          "name": "Button",
+          "path": "packages/ui/src/button",
+          "variants": {
+            "variant": ["contained", "outlined", "text"],
+            "size": ["sm", "md", "lg"]
+          },
+          "defaultVariants": {
+            "variant": "contained",
+            "size": "md"
+          },
+          "props": ["asChild", "className", "variant", "size", "...buttonHTMLAttributes"],
+          "usage": "import { Button } from '@redotlabs/ui';\n\n<Button variant=\"contained\" size=\"md\">Click me</Button>"
+        },
+        {
+          "name": "Badge",
+          "path": "packages/ui/src/badge",
+          "description": "Display status or category labels",
+          "usage": "import { Badge } from '@redotlabs/ui';\n\n<Badge>New</Badge>"
+        },
+        {
+          "name": "Calendar",
+          "path": "packages/ui/src/calendar",
+          "description": "Interactive calendar component for date selection",
+          "dependencies": ["react-day-picker"],
+          "usage": "import { Calendar } from '@redotlabs/ui';\n\n<Calendar mode=\"single\" selected={date} onSelect={setDate} />"
+        },
+        {
+          "name": "Callout",
+          "path": "packages/ui/src/callout",
+          "description": "Highlighted information or alert boxes",
+          "usage": "import { Callout } from '@redotlabs/ui';\n\n<Callout>Important message</Callout>"
+        },
+        {
+          "name": "Checkbox",
+          "path": "packages/ui/src/checkbox",
+          "description": "Form checkbox input with custom styling",
+          "variants": {
+            "size": ["sm", "md", "lg"]
+          },
+          "usage": "import { Checkbox } from '@redotlabs/ui';\n\n<Checkbox checked={isChecked} onCheckedChange={setIsChecked} />"
+        },
+        {
+          "name": "DatePicker",
+          "path": "packages/ui/src/date-picker",
+          "description": "Date picker with calendar dropdown",
+          "dependencies": ["Calendar", "Popover"],
+          "usage": "import { DatePicker } from '@redotlabs/ui';\n\n<DatePicker date={date} setDate={setDate} />"
+        },
+        {
+          "name": "Input",
+          "path": "packages/ui/src/input",
+          "description": "Text input field with consistent styling",
+          "usage": "import { Input } from '@redotlabs/ui';\n\n<Input placeholder=\"Enter text\" value={value} onChange={handleChange} />"
+        },
+        {
+          "name": "Logo",
+          "path": "packages/ui/src/logo",
+          "description": "Redot logo component with variants",
+          "usage": "import { Logo } from '@redotlabs/ui';\n\n<Logo />"
+        },
+        {
+          "name": "Pagination",
+          "path": "packages/ui/src/pagination",
+          "description": "Pagination controls for navigating through pages",
+          "usage": "import { Pagination } from '@redotlabs/ui';\n\n<Pagination currentPage={page} totalPages={10} onPageChange={setPage} />"
+        },
+        {
+          "name": "Popover",
+          "path": "packages/ui/src/popover",
+          "description": "Floating content overlay component",
+          "dependencies": ["@radix-ui/react-popover"],
+          "usage": "import { Popover, PopoverTrigger, PopoverContent } from '@redotlabs/ui';\n\n<Popover>\n  <PopoverTrigger>Open</PopoverTrigger>\n  <PopoverContent>Content</PopoverContent>\n</Popover>"
+        },
+        {
+          "name": "Radio",
+          "path": "packages/ui/src/radio",
+          "description": "Radio button input for single selection",
+          "variants": {
+            "size": ["sm", "md", "lg"]
+          },
+          "usage": "import { Radio } from '@redotlabs/ui';\n\n<Radio value=\"option1\" checked={value === 'option1'} onChange={handleChange} />"
+        },
+        {
+          "name": "Select",
+          "path": "packages/ui/src/select",
+          "description": "Dropdown select component",
+          "variants": {
+            "size": ["sm", "md", "lg"]
+          },
+          "usage": "import { Select } from '@redotlabs/ui';\n\n<Select options={options} value={selected} onChange={setSelected} />"
+        },
+        {
+          "name": "Table",
+          "path": "packages/ui/src/table",
+          "description": "Data table component with sorting and pagination",
+          "usage": "import { Table, TableHeader, TableBody, TableRow, TableCell } from '@redotlabs/ui';\n\n<Table>\n  <TableHeader>...</TableHeader>\n  <TableBody>...</TableBody>\n</Table>"
+        },
+        {
+          "name": "Tabs",
+          "path": "packages/ui/src/tabs",
+          "description": "Tab navigation component",
+          "variants": {
+            "variant": ["contained", "outlined"]
+          },
+          "usage": "import { Tabs, TabsList, TabsTrigger, TabsContent } from '@redotlabs/ui';\n\n<Tabs defaultValue=\"tab1\">\n  <TabsList>\n    <TabsTrigger value=\"tab1\">Tab 1</TabsTrigger>\n  </TabsList>\n  <TabsContent value=\"tab1\">Content</TabsContent>\n</Tabs>"
+        },
+        {
+          "name": "Textarea",
+          "path": "packages/ui/src/textarea",
+          "description": "Multi-line text input",
+          "variants": {
+            "size": ["sm", "md", "lg"]
+          },
+          "usage": "import { Textarea } from '@redotlabs/ui';\n\n<Textarea placeholder=\"Enter text\" value={value} onChange={handleChange} />"
+        },
+        {
+          "name": "Toast",
+          "path": "packages/ui/src/toast",
+          "description": "Toast notification system",
+          "dependencies": ["sonner"],
+          "usage": "import { toast } from '@redotlabs/ui';\n\ntoast.success('Operation successful');"
+        }
+      ],
+      "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+      }
+    },
+
+    "@redotlabs/tokens": {
+      "version": "1.0.1",
+      "description": "Design tokens including colors, typography, and spacing",
+      "exports": {
+        "colors": "Color palette with primary, secondary, accent, neutral, success, warning, danger, info colors with full scale (100-900)",
+        "typography": {
+          "size": "Font size scale from xs to 6xl",
+          "weight": "Font weight scale from thin (100) to black (900)"
+        }
+      },
+      "usage": "import { colors, typography } from '@redotlabs/tokens';\n\n// In Tailwind config\ntheme: {\n  extend: {\n    colors: { ...colors },\n    fontSize: typography.size,\n    fontWeight: typography.weight\n  }\n}"
+    },
+
+    "@redotlabs/themes": {
+      "version": "1.1.0",
+      "description": "Theme provider and theming system with color mode support",
+      "components": [
+        {
+          "name": "ThemeProvider",
+          "description": "Context provider for theming and color management",
+          "props": {
+            "color": ["blue", "red", "green", "purple", "orange", "pink"],
+            "defaultTheme": ["light", "dark", "system"],
+            "storageKey": "string (optional)",
+            "children": "ReactNode"
+          },
+          "usage": "import { ThemeProvider } from '@redotlabs/themes';\n\nfunction App() {\n  return (\n    <ThemeProvider color=\"blue\" defaultTheme=\"system\">\n      <YourApp />\n    </ThemeProvider>\n  );\n}"
+        },
+        {
+          "name": "useTheme",
+          "description": "Hook to access and control theme state",
+          "returns": {
+            "theme": "Current theme mode (light/dark)",
+            "setTheme": "Function to change theme",
+            "color": "Current primary color"
+          },
+          "usage": "import { useTheme } from '@redotlabs/themes';\n\nconst { theme, setTheme, color } = useTheme();"
+        }
+      ],
+      "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "@redotlabs/tokens": ">=1.0.1",
+        "@redotlabs/fonts": ">=1.0.1"
+      }
+    },
+
+    "@redotlabs/utils": {
+      "version": "1.0.0",
+      "description": "Utility functions for className merging and manipulation",
+      "functions": [
+        {
+          "name": "cn",
+          "description": "Merge Tailwind CSS classes with conflict resolution",
+          "usage": "import { cn } from '@redotlabs/utils';\n\nconst className = cn('px-4 py-2', 'px-6', className);"
+        }
+      ],
+      "dependencies": ["clsx", "tailwind-merge"]
+    },
+
+    "@redotlabs/sdui-renderer": {
+      "version": "2.0.4",
+      "description": "Server-Driven UI renderer for dynamic UI generation",
+      "usage": "import { SDUIRenderer } from '@redotlabs/sdui-renderer';\n\n<SDUIRenderer schema={uiSchema} />",
+      "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "@redotlabs/ui": "*"
+      }
+    },
+
+    "@redotlabs/fonts": {
+      "description": "Font management package for the design system",
+      "note": "Workspace package for managing typography assets"
+    }
+  },
+
+  "installation": {
+    "prerequisites": [
+      "pnpm 10.6.1 or later",
+      "Node.js (compatible version)",
+      "GitHub Personal Access Token (PAT) for package registry access"
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "description": "Create .npmrc file in your project",
+        "command": "echo '@redotlabs:registry=https://npm.pkg.github.com\\n//npm.pkg.github.com/:_authToken=${REDOT_PAT}' > .npmrc"
+      },
+      {
+        "step": 2,
+        "description": "Set GitHub PAT as environment variable",
+        "command": "export REDOT_PAT=ghp_your_token_here"
+      },
+      {
+        "step": 3,
+        "description": "Install packages",
+        "command": "pnpm install @redotlabs/ui @redotlabs/themes @redotlabs/tokens"
+      }
+    ]
+  },
+
+  "setup": {
+    "tailwind": {
+      "description": "Configure Tailwind CSS to use design tokens",
+      "configFile": "tailwind.config.ts",
+      "example": "import { colors, typography } from '@redotlabs/tokens';\nimport type { Config } from 'tailwindcss';\n\nexport default {\n  content: ['./src/**/*.{js,ts,jsx,tsx}'],\n  theme: {\n    extend: {\n      colors: {\n        ...colors,\n        primary: {\n          DEFAULT: 'var(--color-primary-600)',\n          100: 'var(--color-primary-100)',\n          200: 'var(--color-primary-200)',\n          300: 'var(--color-primary-300)',\n          400: 'var(--color-primary-400)',\n          500: 'var(--color-primary-500)',\n          600: 'var(--color-primary-600)',\n          700: 'var(--color-primary-700)',\n          800: 'var(--color-primary-800)',\n          900: 'var(--color-primary-900)',\n        },\n      },\n      fontSize: typography.size,\n      fontWeight: typography.weight,\n    },\n  },\n  plugins: [],\n} satisfies Config;"
+    },
+    "css": {
+      "description": "Import Tailwind CSS and design system styles",
+      "file": "index.css or globals.css",
+      "example": "@import 'tailwindcss';\n@config '../../tailwind.config.ts';\n@source '../../node_modules/@redotlabs/ui';"
+    },
+    "theme": {
+      "description": "Wrap your app with ThemeProvider",
+      "file": "main.tsx or App.tsx",
+      "example": "import { ThemeProvider } from '@redotlabs/themes';\n\nfunction App() {\n  return (\n    <ThemeProvider color=\"blue\" defaultTheme=\"system\">\n      <YourApp />\n    </ThemeProvider>\n  );\n}"
+    }
+  },
+
+  "componentPatterns": {
+    "variantSystem": {
+      "description": "Components use Class Variance Authority (CVA) for variant management",
+      "pattern": "Each component with variants has a separate .variants.ts file",
+      "example": "// button.variants.ts\nimport { cva } from 'class-variance-authority';\n\nexport const buttonVariants = cva(base, {\n  variants: {\n    variant: { contained: '...', outlined: '...', text: '...' },\n    size: { sm: '...', md: '...', lg: '...' }\n  },\n  defaultVariants: { variant: 'contained', size: 'md' }\n});"
+    },
+    "composability": {
+      "description": "Components support asChild prop for composition via Radix UI Slot",
+      "example": "<Button asChild>\n  <Link to=\"/home\">Go Home</Link>\n</Button>"
+    },
+    "styling": {
+      "description": "All components accept className prop for custom styling",
+      "utilities": "Use cn() from @redotlabs/utils for merging classes",
+      "example": "<Button className={cn('mt-4', customClass)}>Click</Button>"
+    },
+    "dataAttributes": {
+      "description": "Components include data-slot attributes for testing and styling",
+      "example": "data-slot=\"button\" on Button component"
+    }
+  },
+
+  "bestPractices": {
+    "imports": {
+      "recommended": "Import components from package root for tree-shaking",
+      "example": "import { Button, Input, Select } from '@redotlabs/ui';"
+    },
+    "theming": {
+      "colorScheme": "Always wrap your app with ThemeProvider to enable dynamic theming",
+      "cssVariables": "Use CSS custom properties for primary colors: var(--color-primary-600)",
+      "darkMode": "Dark mode is handled automatically by ThemeProvider"
+    },
+    "styling": {
+      "tailwind": "Use Tailwind utility classes for custom styling",
+      "merging": "Always use cn() utility when merging className props",
+      "tokens": "Prefer design tokens over hardcoded values"
+    },
+    "accessibility": {
+      "radix": "Components built on Radix UI primitives include accessibility features",
+      "focus": "All interactive components have focus-visible states",
+      "keyboard": "Keyboard navigation is supported out of the box"
+    },
+    "performance": {
+      "treeshaking": "Import only what you need for optimal bundle size",
+      "animations": "Animations use will-change-transform for better performance",
+      "lazy": "Consider lazy loading heavy components like Calendar and DatePicker"
+    }
+  },
+
+  "developmentWorkflow": {
+    "monorepo": {
+      "tool": "Turborepo",
+      "packageManager": "pnpm workspaces",
+      "structure": "packages/ directory contains all packages"
+    },
+    "scripts": {
+      "dev": "Start development server with hot reload",
+      "build": "Build all packages",
+      "test": "Run tests with Vitest",
+      "lint": "Lint code with ESLint",
+      "format": "Format code with Prettier",
+      "storybook": "Start Storybook for component documentation"
+    },
+    "componentGeneration": {
+      "tool": "Plop",
+      "command": "pnpm plop",
+      "description": "Generate new components with boilerplate code"
+    },
+    "testing": {
+      "framework": "Vitest 3",
+      "pattern": "*.test.tsx files alongside components"
+    },
+    "documentation": {
+      "tool": "Storybook 9",
+      "url": "https://storybook.redot.me",
+      "pattern": "*.stories.tsx files for component examples"
+    }
+  },
+
+  "keyTechnologies": {
+    "ui": {
+      "framework": "React 19",
+      "styling": "Tailwind CSS 4",
+      "animations": "Framer Motion",
+      "primitives": "Radix UI",
+      "variants": "Class Variance Authority (CVA)"
+    },
+    "build": {
+      "bundler": "Vite",
+      "compiler": "TypeScript",
+      "packageBuilder": "tsup",
+      "monorepo": "Turborepo + pnpm workspaces"
+    },
+    "quality": {
+      "linting": "ESLint",
+      "formatting": "Prettier",
+      "testing": "Vitest",
+      "hooks": "Husky"
+    },
+    "versioning": {
+      "changesets": "Automated version management and changelog generation",
+      "registry": "GitHub Package Registry"
+    }
+  },
+
+  "commonTasks": {
+    "addingComponent": {
+      "description": "Add a new UI component to the design system",
+      "steps": [
+        "Run pnpm plop to generate component boilerplate",
+        "Implement component in packages/ui/src/<component>/",
+        "Create variants file if component has variants",
+        "Add tests in <component>.test.tsx",
+        "Add stories in <component>.stories.tsx",
+        "Export from packages/ui/src/index.ts",
+        "Update documentation"
+      ]
+    },
+    "usingComponent": {
+      "description": "Use a component in your application",
+      "steps": [
+        "Ensure ThemeProvider is set up in your app root",
+        "Import component from @redotlabs/ui",
+        "Use component with appropriate props and variants",
+        "Add custom styling via className if needed"
+      ]
+    },
+    "customizingTheme": {
+      "description": "Customize the design system theme",
+      "steps": [
+        "Extend Tailwind config with custom colors/tokens",
+        "Use CSS variables for dynamic theming",
+        "Pass color prop to ThemeProvider for primary color",
+        "Use setTheme from useTheme hook for theme switching"
+      ]
+    },
+    "updatingPackages": {
+      "description": "Update design system packages in your project",
+      "steps": [
+        "Check latest versions on GitHub Packages",
+        "Update version in package.json",
+        "Run pnpm install",
+        "Review changelog for breaking changes",
+        "Update code if necessary"
+      ]
+    }
+  },
+
+  "troubleshooting": {
+    "authentication": {
+      "issue": "Cannot install packages - 401 Unauthorized",
+      "solution": "Ensure REDOT_PAT environment variable is set with valid GitHub PAT and .npmrc is configured correctly"
+    },
+    "styling": {
+      "issue": "Components not styled correctly",
+      "solution": "Verify Tailwind CSS is configured with design tokens and @source directive includes node_modules/@redotlabs/ui"
+    },
+    "typescript": {
+      "issue": "Type errors when using components",
+      "solution": "Ensure @types packages are installed and TypeScript version is compatible"
+    },
+    "theme": {
+      "issue": "Theme colors not applying",
+      "solution": "Check ThemeProvider is wrapping your app and CSS variables are defined for primary colors"
+    }
+  },
+
+  "resources": {
+    "repository": "https://github.com/redotlabs/design-system",
+    "storybook": "https://storybook.redot.me",
+    "issues": "https://github.com/redotlabs/design-system/issues",
+    "discussions": "https://github.com/redotlabs/design-system/discussions"
+  },
+
+  "aiAgentGuidelines": {
+    "understanding": [
+      "This is a monorepo-based React design system using pnpm workspaces and Turborepo",
+      "All components are TypeScript-based with full type safety",
+      "Styling uses Tailwind CSS 4 with design tokens from @redotlabs/tokens",
+      "Component variants are managed using Class Variance Authority (CVA)",
+      "Theme management is centralized through @redotlabs/themes package"
+    ],
+    "componentUsage": [
+      "Always import from package root: import { Button } from '@redotlabs/ui'",
+      "Check component variants in .variants.ts files for available options",
+      "Use cn() utility when combining className props",
+      "Wrap apps with ThemeProvider for theming support",
+      "Components support asChild prop for composition patterns"
+    ],
+    "development": [
+      "Use pnpm as package manager (version 10.6.1)",
+      "Follow existing component structure when adding new components",
+      "Include tests (.test.tsx) and stories (.stories.tsx) for new components",
+      "Use Plop for generating component boilerplate",
+      "Ensure TypeScript types are properly exported"
+    ],
+    "styling": [
+      "Use design tokens from @redotlabs/tokens instead of hardcoded values",
+      "Primary colors use CSS variables: var(--color-primary-{100-900})",
+      "Dark mode is handled by ThemeProvider, not manual class toggling",
+      "Use Tailwind utilities for spacing, layout, and responsive design",
+      "Component variants should use CVA pattern for consistency"
+    ],
+    "fileStructure": [
+      "Component files: <component>.tsx",
+      "Variants: <component>.variants.ts",
+      "Tests: <component>.test.tsx",
+      "Stories: <component>.stories.tsx",
+      "Index: index.ts (for exports)",
+      "Each component in its own directory under packages/ui/src/"
+    ]
+  }
+}

@@ -219,6 +219,7 @@
     },
 
     "@redotlabs/fonts": {
+      "version": "1.0.1",
       "description": "Font management package for the design system",
       "note": "Workspace package for managing typography assets"
     }

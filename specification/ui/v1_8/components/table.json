@@ -1,0 +1,14 @@
+{
+  "name": "Table",
+  "description": "테이블 컴포넌트입니다. Compound Component 패턴을 사용합니다.",
+  "slots": [
+    { "name": "Table", "description": "<table> 테이블 루트" },
+    { "name": "TableHeader", "description": "<thead> 테이블 헤더" },
+    { "name": "TableHead", "description": "<th> 헤더 셀" },
+    { "name": "TableBody", "description": "<tbody> 테이블 본문" },
+    { "name": "TableRow", "description": "<tr> 테이블 행" },
+    { "name": "TableCell", "description": "<td> 테이블 셀" },
+    { "name": "TableFooter", "description": "<tfoot> 테이블 푸터" }
+  ],
+  "usage": "```tsx\nimport { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@redotlabs/ui';\n\n<Table>\n  <TableHeader>\n    <TableRow>\n      <TableHead>Header</TableHead>\n    </TableRow>\n  </TableHeader>\n  <TableBody>\n    <TableRow>\n      <TableCell>Data</TableCell>\n    </TableRow>\n  </TableBody>\n</Table>\n```"
+}

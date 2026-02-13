@@ -1,0 +1,19 @@
+{
+  "name": "Textarea",
+  "description": "여러 줄 텍스트 입력 컴포넌트입니다.",
+  "props": [
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "텍스트 영역 크기"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "-",
+      "description": "비활성화 상태"
+    }
+  ],
+  "usage": "```tsx\nimport { Textarea } from '@redotlabs/ui';\n\n<Textarea placeholder=\"Enter description\" size=\"md\" />\n```"
+}

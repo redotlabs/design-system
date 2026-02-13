@@ -1,0 +1,25 @@
+{
+  "name": "Tabs",
+  "description": "탭 네비게이션 컴포넌트입니다.",
+  "props": [
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "탭 크기"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "전체 탭 비활성화"
+    }
+  ],
+  "slots": [
+    {
+      "name": "Tab",
+      "description": "개별 탭 (isActive, barProps 포함)"
+    }
+  ],
+  "usage": "```tsx\nimport { Tabs, Tab } from '@redotlabs/ui';\n\n<Tabs size=\"md\">\n  <Tab isActive={activeTab === 'tab1'} onClick={() => setActiveTab('tab1')}>\n    탭 1\n  </Tab>\n  <Tab isActive={activeTab === 'tab2'} onClick={() => setActiveTab('tab2')}>\n    탭 2\n  </Tab>\n</Tabs>\n```"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Radio",
+  "description": "라디오 버튼 컴포넌트입니다.",
+  "props": [
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "라디오 버튼 크기"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "default": "-",
+      "description": "라디오 버튼 라벨 텍스트"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "-",
+      "description": "비활성화 상태"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "default": "-",
+      "description": "라디오 그룹 이름"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "default": "-",
+      "description": "라디오 값"
+    }
+  ],
+  "usage": "```tsx\nimport { Radio } from '@redotlabs/ui';\n\n<Radio label=\"Option 1\" name=\"group1\" value=\"1\" />\n```"
+}

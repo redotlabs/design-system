@@ -1,0 +1,26 @@
+{
+  "name": "Toast",
+  "description": "토스트 알림 컴포넌트입니다. sonner 라이브러리 기반입니다.",
+  "props": [
+    {
+      "name": "Toaster",
+      "type": "Component",
+      "description": "App 최상위에 배치해야 하는 컨테이너"
+    }
+  ],
+  "methods": [
+    {
+      "name": "toast(message)",
+      "description": "기본 토스트"
+    },
+    {
+      "name": "toast.success(message)",
+      "description": "성공 토스트"
+    },
+    {
+      "name": "toast.error(message)",
+      "description": "에러 토스트"
+    }
+  ],
+  "usage": "```tsx\nimport { Toaster, toast } from '@redotlabs/ui';\n\n// 1. App 최상위에 Toaster 배치\n<Toaster />\n\n// 2. 필요할 때 호출\ntoast.success('성공!');\n```"
+}

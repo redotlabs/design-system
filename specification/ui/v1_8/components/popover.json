@@ -1,0 +1,5 @@
+{
+  "name": "Popover",
+  "description": "팝오버 컴포넌트입니다. Radix UI 기반으로 shadcn과 사용법이 동일합니다.",
+  "usage": "```tsx\nimport { Popover, PopoverTrigger, PopoverContent } from '@redotlabs/ui';\n\n<Popover>\n  <PopoverTrigger>Open</PopoverTrigger>\n  <PopoverContent>Content</PopoverContent>\n</Popover>\n```"
+}

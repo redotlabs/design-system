@@ -1,0 +1,31 @@
+{
+  "name": "Checkbox",
+  "description": "체크박스 컴포넌트입니다.",
+  "props": [
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "체크박스 크기"
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "default": "-",
+      "description": "체크박스 라벨 텍스트"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "-",
+      "description": "비활성화 상태"
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "default": "-",
+      "description": "체크 상태"
+    }
+  ],
+  "usage": "```tsx\nimport { Checkbox } from '@redotlabs/ui';\n\n<Checkbox label=\"Accept terms\" checked={true} />\n```"
+}

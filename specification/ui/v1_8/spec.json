@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "design-system",
+  "version": "1.8",
+  "description": "Design system documentation for @redotlabs/ui components. Use this index to find specific component details.",
+  "package": "@redotlabs/ui",
+  "categories": [
+    {
+      "id": "form-input",
+      "name": "Form / Input",
+      "description": "데이터 입력",
+      "components": [
+        {
+          "name": "Button",
+          "coreProps": ["variant", "size", "asChild"],
+          "resourceFile": "resources/button.json"
+        },
+        {
+          "name": "Input",
+          "coreProps": ["size", "error", "startContent"],
+          "resourceFile": "resources/input.json"
+        },
+        {
+          "name": "Textarea",
+          "coreProps": ["size", "disabled"],
+          "resourceFile": "resources/textarea.json"
+        },
+        {
+          "name": "Checkbox",
+          "coreProps": ["label", "checked"],
+          "resourceFile": "resources/checkbox.json"
+        },
+        {
+          "name": "Radio",
+          "coreProps": ["label", "name", "value"],
+          "resourceFile": "resources/radio.json"
+        },
+        {
+          "name": "Select",
+          "coreProps": ["value", "onValueChange"],
+          "resourceFile": "resources/select.json"
+        },
+        {
+          "name": "DatePicker",
+          "coreProps": ["defaultValue", "setValue"],
+          "resourceFile": "resources/date-picker.json"
+        }
+      ]
+    },
+    {
+      "id": "data-display",
+      "name": "Data Display / Feedback",
+      "description": "데이터 표시 및 피드백",
+      "components": [
+        {
+          "name": "Badge",
+          "coreProps": ["color", "size"],
+          "resourceFile": "resources/badge.json"
+        },
+        {
+          "name": "Callout",
+          "coreProps": ["color", "title", "icon"],
+          "resourceFile": "resources/callout.json"
+        },
+        {
+          "name": "Table",
+          "coreProps": ["TableHeader", "TableBody"],
+          "resourceFile": "resources/table.json"
+        },
+        {
+          "name": "Toast",
+          "coreProps": ["toast.success", "Toaster"],
+          "resourceFile": "resources/toast.json"
+        },
+        {
+          "name": "Logo",
+          "coreProps": ["Logo.Text", "Logo.Symbol"],
+          "resourceFile": "resources/logo.json"
+        }
+      ]
+    },
+    {
+      "id": "navigation-layout",
+      "name": "Navigation / Layout",
+      "description": "내비게이션 및 레이아웃",
+      "components": [
+        {
+          "name": "Tabs",
+          "coreProps": ["size", "isActive", "Tab"],
+          "resourceFile": "resources/tabs.json"
+        },
+        {
+          "name": "Pagination",
+          "coreProps": ["totalPages", "currentPage"],
+          "resourceFile": "resources/pagination.json"
+        },
+        {
+          "name": "Popover",
+          "coreProps": ["Radix UI 기반"],
+          "resourceFile": "resources/popover.json"
+        }
+      ]
+    }
+  ],
+  "commonPatterns": {
+    "className": "공통으로 className prop 주입이 가능하며, 이를 통해 Tailwind CSS 클래스를 추가할 수 있습니다."
+  },
+  "tips": [
+    "상세 기능, 복잡한 Props 또는 코드 예제가 필요한 경우 해당 컴포넌트의 상세 설명 파일(resources/[컴포넌트명].json)을 읽으세요."
+  ]
+}

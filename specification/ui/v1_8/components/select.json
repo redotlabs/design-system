@@ -1,0 +1,61 @@
+{
+  "name": "Select",
+  "description": "드롭다운 선택 컴포넌트입니다. Compound Component 패턴을 사용합니다.",
+  "props": [
+    {
+      "name": "value",
+      "type": "string",
+      "default": "-",
+      "description": "선택된 값"
+    },
+    {
+      "name": "onValueChange",
+      "type": "(value: string) => void",
+      "default": "-",
+      "description": "값 변경 콜백"
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "default": "-",
+      "description": "드롭다운 열림 상태 (controlled)"
+    },
+    {
+      "name": "onOpenChange",
+      "type": "(open: boolean) => void",
+      "default": "-",
+      "description": "열림 상태 변경 콜백"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "비활성화 상태"
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "크기"
+    }
+  ],
+  "slots": [
+    {
+      "name": "SelectTrigger",
+      "description": "트리거 내용 (주로 SelectValue)"
+    },
+    {
+      "name": "SelectValue",
+      "description": "placeholder (기본값 'select')"
+    },
+    {
+      "name": "SelectContent",
+      "description": "SelectItem 목록을 포함하는 컨테이너"
+    },
+    {
+      "name": "SelectItem",
+      "description": "개별 옵션 (value, disabled props 포함)"
+    }
+  ],
+  "usage": "```tsx\nimport {\n  Select,\n  SelectTrigger,\n  SelectValue,\n  SelectContent,\n  SelectItem\n} from '@redotlabs/ui';\n\n<Select value={value} onValueChange={setValue}>\n  <SelectTrigger>\n    <SelectValue placeholder=\"옵션을 선택하세요\" />\n  </SelectTrigger>\n  <SelectContent>\n    <SelectItem value=\"1\">옵션 1</SelectItem>\n    <SelectItem value=\"2\">옵션 2</SelectItem>\n  </SelectContent>\n</Select>\n```"
+}

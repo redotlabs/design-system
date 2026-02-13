@@ -1,0 +1,19 @@
+{
+  "name": "Badge",
+  "description": "배지/라벨 컴포넌트입니다.",
+  "props": [
+    {
+      "name": "color",
+      "type": "'default' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'default'",
+      "description": "배지 색상"
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'md'",
+      "description": "배지 크기"
+    }
+  ],
+  "usage": "```tsx\nimport { Badge } from '@redotlabs/ui';\n\n<Badge color=\"success\" size=\"md\">\n  Active\n</Badge>\n```"
+}

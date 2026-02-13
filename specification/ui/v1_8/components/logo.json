@@ -1,0 +1,29 @@
+{
+  "name": "Logo",
+  "description": "로고 컴포넌트입니다.",
+  "slots": [
+    {
+      "name": "Logo.Text",
+      "props": [
+        {
+          "name": "color",
+          "type": "'color' | 'mono'",
+          "default": "'color'",
+          "description": "로고 색상"
+        }
+      ]
+    },
+    {
+      "name": "Logo.Symbol",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'base' | 'solid' | '3d'",
+          "default": "'base'",
+          "description": "심볼 스타일"
+        }
+      ]
+    }
+  ],
+  "usage": "```tsx\nimport { Logo } from '@redotlabs/ui';\n\n<Logo.Text color=\"color\" />\n<Logo.Symbol variant=\"base\" />\n```"
+}

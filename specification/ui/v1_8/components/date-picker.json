@@ -1,0 +1,34 @@
+{
+  "name": "DatePicker",
+  "description": "날짜 선택 입력 컴포넌트입니다. Input + Calendar + Popover를 결합한 컴포넌트입니다.",
+  "props": [
+    {
+      "name": "defaultValue",
+      "type": "Date",
+      "default": "new Date()",
+      "description": "초기 날짜 값"
+    },
+    {
+      "name": "setValue",
+      "type": "(value: Date | undefined) => void",
+      "description": "날짜 변경 콜백"
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "description": "비활성화 상태"
+    },
+    {
+      "name": "calendarProps",
+      "type": "Partial<CalendarProps>",
+      "description": "Calendar 컴포넌트에 전달할 Props"
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "'sm'",
+      "description": "입력 필드 크기"
+    }
+  ],
+  "usage": "```tsx\nimport { DatePicker } from '@redotlabs/ui';\n\n<DatePicker\n  defaultValue={date}\n  setValue={setDate}\n/>\n```"
+}

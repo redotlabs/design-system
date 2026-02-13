@@ -1,0 +1,31 @@
+{
+  "name": "Callout",
+  "description": "강조 메시지 박스 컴포넌트입니다.",
+  "props": [
+    {
+      "name": "color",
+      "type": "'default' | 'secondary' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "'default'",
+      "description": "배경 색상"
+    },
+    {
+      "name": "icon",
+      "type": "ReactNode",
+      "default": "-",
+      "description": "아이콘"
+    },
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "default": "-",
+      "description": "제목"
+    },
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "default": "-",
+      "description": "내용"
+    }
+  ],
+  "usage": "```tsx\nimport { Callout } from '@redotlabs/ui';\n\n<Callout\n  title=\"알림\"\n  content=\"중요한 정보입니다.\"\n  color=\"info\"\n/>\n```"
+}

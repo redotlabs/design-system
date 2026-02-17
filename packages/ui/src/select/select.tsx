@@ -10,7 +10,6 @@ import {
 } from 'react';
 import { type VariantProps } from 'class-variance-authority';
 import { ChevronDown } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@redotlabs/utils';
 import { Button } from '../button';
 import {
@@ -207,42 +206,26 @@ interface SelectContentProps {
   children: ReactNode;
 }
 
-const dropdownVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.95,
-    y: -8,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-  },
-};
-
 function SelectContent({ className, children }: SelectContentProps) {
   const { open, size } = useSelectContext();
 
+  if (!open) {
+    return null;
+  }
+
   return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          role="listbox"
-          data-slot="select-dropdown"
-          className={cn(selectDropdownVariants({ size }), className)}
-          variants={dropdownVariants}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-          transition={{
-            duration: 0.1,
-            ease: [0.4, 0, 0.2, 1],
-          }}
-        >
-          {children}
-        </motion.div>
+    <div
+      role="listbox"
+      data-open={open}
+      data-slot="select-dropdown"
+      className={cn(
+        'data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95',
+        selectDropdownVariants({ size }),
+        className
       )}
-    </AnimatePresence>
+    >
+      {children}
+    </div>
   );
 }
 

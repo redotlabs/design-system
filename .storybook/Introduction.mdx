@@ -1,10 +1,94 @@
-import { Meta } from "@storybook/addon-docs/blocks";
+import { Meta } from '@storybook/addon-docs/blocks';
+import {
+  Table,
+  TableHeader,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+} from '../packages/ui/src/table';
 
 <Meta title="Introduction" />
 
-<section className="flex flex-col gap-4">
-    <h1>Introduction</h1>
-    <p>
-        This is the Redot design system.
-    </p>
+<section className="flex flex-col gap-2 max-w-3xl">
+
+# Redot Design System
+
+A shared design system for Redot services.
+Tokens, themes, and components are separated into individual packages to maintain consistent UI and brand experience.
+
+---
+
+## Packages
+
+<Table>
+  <TableHeader>
+    <TableRow className="[&>th]:p-3 [&>th]:bg-gray-100 [&>th:first-child]:rounded-l-md [&>th:last-child]:rounded-r-md">
+      <TableHead>Package</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow className="border-b-2 border-gray-100 text-sm font-medium text-gray-800 [&>td]:p-3">
+      <TableCell>**@redotlabs/tokens**</TableCell>
+      <TableCell>
+        Design tokens — color palette (12 families × 100–900), typography (size,
+        weight)
+      </TableCell>
+    </TableRow>
+    <TableRow className="border-b-2 border-gray-100 text-sm font-medium text-gray-800 [&>td]:p-3">
+      <TableCell>**@redotlabs/themes**</TableCell>
+      <TableCell>
+        Token-based theme system. Supports per-client brand styling
+      </TableCell>
+    </TableRow>
+    <TableRow className="border-b-2 border-gray-100 text-sm font-medium text-gray-800 [&>td]:p-3">
+      <TableCell>**@redotlabs/ui**</TableCell>
+      <TableCell>
+        16+ reusable components — Badge, Button, Calendar, Input, Select, Table,
+        Toast, etc.
+      </TableCell>
+    </TableRow>
+    <TableRow className="border-b-2 border-gray-100 text-sm font-medium text-gray-800 [&>td]:p-3">
+      <TableCell>**@redotlabs/fonts**</TableCell>
+      <TableCell>Pretendard font package</TableCell>
+    </TableRow>
+    <TableRow className="border-b-2 border-gray-100 text-sm font-medium text-gray-800 [&>td]:p-3">
+      <TableCell>**@redotlabs/utils**</TableCell>
+      <TableCell>Utility functions — `cn()` (clsx + tailwind-merge)</TableCell>
+    </TableRow>
+    <TableRow className="border-b-2 border-gray-100 text-sm font-medium text-gray-800 [&>td]:p-3">
+      <TableCell>**@redotlabs/sdui-renderer**</TableCell>
+      <TableCell>JSON schema-based SDUI rendering engine</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+---
+
+## Tech Stack
+
+- **React 19** + **TypeScript**
+- **Tailwind CSS 4** + **class-variance-authority** (variants)
+- **Radix UI** (headless primitives)
+- **Storybook 9** (documentation + visual testing)
+- **Vitest** (unit testing)
+- **tsup** (ESM/CJS build)
+- **Turborepo + pnpm** (monorepo)
+- **GitHub Packages** (private npm registry)
+
+---
+
+## Installation
+
+```bash
+pnpm add @redotlabs/ui @redotlabs/tokens @redotlabs/themes
+```
+
+Requires GitHub Packages registry in `.npmrc`:
+
+```
+@redotlabs:registry=https://npm.pkg.github.com
+```
+
 </section>

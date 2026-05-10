@@ -8,6 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "target": "ES2015",
     "module": "ESNext",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "skipLibCheck": true
   }
 }

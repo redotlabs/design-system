@@ -1,6 +1,6 @@
 {
   "name": "@redotlabs/themes",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Themes for design system",
   "type": "module",
   "scripts": {
@@ -44,8 +44,8 @@
     "clean-package": "^2.2.0"
   },
   "peerDependencies": {
-    "@redotlabs/tokens": ">=1.0.1",
-    "@redotlabs/fonts": ">=1.0.1",
+    "@redotlabs/tokens": ">=1.0.2",
+    "@redotlabs/fonts": ">=1.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

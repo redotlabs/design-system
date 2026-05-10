@@ -1,5 +1,15 @@
 # @redotlabs/ui
 
+## 1.8.2
+
+### Patch Changes
+
+- chore: rebuild with patched build toolchain (vite, storybook, rollup, tar, handlebars 등 dev 의존성 보안 패치 적용 후 재빌드). 런타임 의존성 변경 없음.
+- Updated dependencies
+  - @redotlabs/themes@1.1.1
+  - @redotlabs/tokens@1.0.2
+  - @redotlabs/utils@1.0.1
+
 ## 1.8.1
 
 ### Patch Changes

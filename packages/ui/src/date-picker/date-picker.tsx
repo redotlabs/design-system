@@ -70,7 +70,8 @@ function DatePicker({
     }
   };
 
-  const handleSelect = (selectedDate: Date) => {
+  const handleSelect = (selectedDate: Date | undefined) => {
+    if (!selectedDate) return;
     setValue?.(selectedDate);
     setDateString(formatDate(selectedDate));
     setDate(selectedDate);

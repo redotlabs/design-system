@@ -12,6 +12,6 @@ import * as Components from '@redotlabs/ui/only-components';
  *  Typography: Typography,
  * }
  */
-export const COMPONENT_MAP = {
+export const COMPONENT_MAP: typeof Components = {
   ...Components,
 };

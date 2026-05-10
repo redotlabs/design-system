@@ -1,6 +1,6 @@
 {
   "name": "@redotlabs/ui",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "UI components for Redot design system",
   "type": "module",
   "scripts": {
@@ -68,9 +68,9 @@
     "prop-types": "^15.8.1"
   },
   "peerDependencies": {
-    "@redotlabs/themes": ">=1.1.0",
-    "@redotlabs/tokens": ">=1.0.1",
-    "@redotlabs/utils": ">=1.0.0",
+    "@redotlabs/themes": ">=1.1.1",
+    "@redotlabs/tokens": ">=1.0.2",
+    "@redotlabs/utils": ">=1.0.1",
     "@tailwindcss/vite": "^4.1.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

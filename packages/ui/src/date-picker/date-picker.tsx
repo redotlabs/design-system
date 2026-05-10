@@ -23,7 +23,7 @@ function formatDate(date: Date | undefined) {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-function isValidDate(date: Date | undefined) {
+function isValidDate(date: Date | undefined): date is Date {
   if (!date) {
     return false;
   }
@@ -115,6 +115,7 @@ function DatePicker({
             >
               <Calendar
                 mode="single"
+                required={false}
                 selected={date}
                 captionLayout="dropdown"
                 startMonth={new Date(1900, 0, 1)}

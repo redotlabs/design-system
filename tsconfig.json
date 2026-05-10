@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["packages/*"]
-    },
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "target": "ES2015",

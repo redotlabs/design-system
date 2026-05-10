@@ -1,8 +1,11 @@
+import type { ElementType } from 'react';
 import { COMPONENT_MAP } from './const';
 import type { ContentBlock } from './types';
 
 function SDUIRenderer({ content }: { content: ContentBlock }) {
-  const Comp = COMPONENT_MAP[content.component] || content.component;
+  const Comp = (COMPONENT_MAP[
+    content.component as keyof typeof COMPONENT_MAP
+  ] || content.component) as ElementType;
 
   if (!content.children) {
     return <Comp {...content.props} />;

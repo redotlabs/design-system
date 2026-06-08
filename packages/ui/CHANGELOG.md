@@ -1,5 +1,18 @@
 # @redotlabs/ui
 
+## 1.9.0
+
+### Minor Changes
+
+- 40d6ea7: Select: migrate to Radix UI primitives while keeping the design-system look. The trigger and items now render the `Button` component via Radix `asChild`, `size` (sm/md/lg) propagates from `<Select size>` through context, and dropdown size tokens are sourced from a single place in `select.variants.ts`. Adds `SelectGroup`, `SelectLabel`, `SelectSeparator`, `SelectScrollUpButton`, and `SelectScrollDownButton` exports.
+
+### Patch Changes
+
+- 8ef815f: DatePicker: disable the calendar trigger button when `disabled` is set so the popover can no longer be opened in the disabled state.
+- 696860e: Pagination: add `aria-current="page"` to the active page button so assistive technologies announce the current page.
+- 8d2cda8: Textarea: remove the conflicting `bg-transparent` class so the intended `bg-white` background is no longer dropped by tailwind-merge.
+- de31051: Remove the unused `framer-motion` dependency from the ui package — it is no longer imported by any component.
+
 ## 1.8.2
 
 ### Patch Changes

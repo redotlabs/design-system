@@ -101,6 +101,7 @@ function DatePicker({
                 type="button"
                 variant="text"
                 size="sm"
+                disabled={disabled}
                 className={cn('p-0 text-gray-800', disabled && 'text-gray-300')}
                 aria-label="Open date picker"
               >

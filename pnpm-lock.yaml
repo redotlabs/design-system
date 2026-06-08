@@ -37,9 +37,6 @@ importers:
       '@redotlabs/fonts':
         specifier: workspace:*
         version: link:packages/fonts
-      '@redotlabs/sdui-renderer':
-        specifier: workspace:*
-        version: link:packages/sdui-renderer
       '@redotlabs/themes':
         specifier: workspace:*
         version: link:packages/themes
@@ -172,31 +169,6 @@ importers:
       typescript:
         specifier: ^5.7.2
         version: 5.8.3
-
-  packages/sdui-renderer:
-    dependencies:
-      react:
-        specifier: ^19.0.0
-        version: 19.1.0
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.1.0(react@19.1.0)
-    devDependencies:
-      '@redotlabs/ui':
-        specifier: workspace:*
-        version: link:../ui
-      '@types/node':
-        specifier: ^24.0.15
-        version: 24.0.15
-      '@types/react':
-        specifier: ^19.1.8
-        version: 19.1.8
-      clean-package:
-        specifier: ^2.2.0
-        version: 2.2.0
-      prop-types:
-        specifier: ^15.8.1
-        version: 15.8.1
 
   packages/themes:
     dependencies:

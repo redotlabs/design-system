@@ -25,7 +25,6 @@ A design system monorepo used in Redot's project. Provides UI components, design
 - [@redotlabs/tokens](https://github.com/redotlabs/design-system/tree/main/packages/tokens)
 - [@redotlabs/themes](https://github.com/redotlabs/design-system/tree/main/packages/themes)
 - [@redotlabs/utils](https://github.com/redotlabs/design-system/tree/main/packages/utils)
-- [@redotlabs/sdui-renderer](https://github.com/redotlabs/design-system/tree/main/packages/sdui-renderer)
 
 ---
 

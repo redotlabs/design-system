@@ -7,7 +7,7 @@ export const textareaVariantsOptions = {
     'focus-within:border-ring focus-within:ring-primary-500 focus-within:ring-[1px]',
     'invalid:ring-red-500 invalid:border-red-500 [[aria-invalid=true]]:ring-red-500 [[aria-invalid=true]]:border-red-500',
     'disabled:cursor-not-allowed disabled:bg-gray-100',
-    'placeholder:text-gray-300 selection:bg-primary selection:text-primary-foreground bg-transparent outline-none',
+    'placeholder:text-gray-300 selection:bg-primary selection:text-primary-foreground outline-none',
     'disabled:text-gray-300'
   ),
 

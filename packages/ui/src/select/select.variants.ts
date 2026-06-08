@@ -16,14 +16,34 @@ export const selectVariantsOptions = {
   } as const,
 };
 
+// Shared dropdown size tokens — single source of truth consumed by both the
+// legacy combined variant and the granular Radix Content/Viewport variants.
+const dropdownContentSize = {
+  sm: 'rounded-lg',
+  md: 'rounded-[10px]',
+  lg: 'rounded-[10px]',
+} as const;
+
+const dropdownViewportSize = {
+  sm: 'p-1 gap-1',
+  md: 'p-1.5 gap-1',
+  lg: 'p-2 gap-1',
+} as const;
+
+const dropdownOffsetSize = {
+  sm: 'mt-1',
+  md: 'mt-2',
+  lg: 'mt-2',
+} as const;
+
 export const selectDropdownVariantsOptions = {
   base: 'absolute z-50 w-full flex flex-col bg-white border border-gray-300 shadow-lg overflow-hidden origin-top transition-all duration-200 ease-out',
 
   variants: {
     size: {
-      sm: 'p-1 gap-1 rounded-lg mt-1',
-      md: 'p-1.5 gap-1 rounded-[10px] mt-2',
-      lg: 'p-2 gap-1 rounded-[10px] mt-2',
+      sm: `${dropdownViewportSize.sm} ${dropdownContentSize.sm} ${dropdownOffsetSize.sm}`,
+      md: `${dropdownViewportSize.md} ${dropdownContentSize.md} ${dropdownOffsetSize.md}`,
+      lg: `${dropdownViewportSize.lg} ${dropdownContentSize.lg} ${dropdownOffsetSize.lg}`,
     },
   },
 
@@ -67,4 +87,16 @@ export const selectDropdownVariants = cva(selectDropdownVariantsOptions.base, {
 export const selectOptionVariants = cva(selectOptionVariantsOptions.base, {
   variants: selectOptionVariantsOptions.variants,
   defaultVariants: selectOptionVariantsOptions.defaultVariants,
+});
+
+/** Corner radius per size — apply to the Radix SelectContent container. */
+export const selectContentSizeVariants = cva('', {
+  variants: { size: dropdownContentSize },
+  defaultVariants: { size: 'md' },
+});
+
+/** Padding + gap per size — apply to the Radix SelectViewport. */
+export const selectViewportSizeVariants = cva('', {
+  variants: { size: dropdownViewportSize },
+  defaultVariants: { size: 'md' },
 });

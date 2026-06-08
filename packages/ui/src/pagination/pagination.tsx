@@ -102,6 +102,7 @@ const Pagination = ({
               key={page}
               onClick={() => onPageChange(page as number)}
               aria-label={`page ${page}`}
+              aria-current={page === currentPage ? 'page' : undefined}
             >
               {page}
             </Button>

@@ -45,7 +45,6 @@
     "@changesets/cli": "^2.29.5",
     "@eslint/js": "^9.30.1",
     "@redotlabs/fonts": "workspace:*",
-    "@redotlabs/sdui-renderer": "workspace:*",
     "@redotlabs/themes": "workspace:*",
     "@redotlabs/tokens": "workspace:*",
     "@redotlabs/ui": "workspace:*",

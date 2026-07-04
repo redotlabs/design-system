@@ -6,6 +6,7 @@ WORKDIR /app
 
 COPY . .
 RUN pnpm install --frozen-lockfile
+RUN pnpm build                    # turbo build @redotlabs/* → 워크스페이스 패키지 dist(tokens 등)
 RUN pnpm build-storybook          # → storybook-static/
 
 # ---- runner ----

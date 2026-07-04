@@ -1,0 +1,59 @@
+name: CI (k8s image)
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Login to GHCR
+        if: github.event_name == 'push'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build & push (linux/arm64)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/arm64
+          # PR: 빌드 검증만 (push X). main push: GHCR push.
+          push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+          tags: |
+            ghcr.io/redotlabs/redot-storybook:${{ github.sha }}
+            ghcr.io/redotlabs/redot-storybook:main
+          labels: |
+            org.opencontainers.image.source=https://github.com/redotlabs/design-system
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  bump-manifest:
+    needs: build-and-push
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ryxxn/homelab-k3s
+          token: ${{ secrets.HOMELAB_REPO_TOKEN }}
+      - name: Bump image tag & push
+        env:
+          SHA: ${{ github.sha }}
+        run: |
+          yq -i '(select(.kind == "Deployment" and .metadata.name == "redot-storybook").spec.template.spec.containers[0].image) = "ghcr.io/redotlabs/redot-storybook:" + strenv(SHA)' redot/storybook.yaml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add redot/storybook.yaml
+          git diff --cached --quiet || git commit -m "deploy(redot-storybook): ${SHA}"
+          git push

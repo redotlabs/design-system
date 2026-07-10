@@ -37,7 +37,31 @@ describe('Button', () => {
     expect(button.className).toContain('custom-class');
   });
 
-  // 4. Props 전달 테스트
+  // 4. Color variant 테스트
+  it('defaults to the primary (default) color', () => {
+    render(<Button>Click</Button>);
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('bg-primary-500');
+  });
+
+  it('applies the semantic color variant', () => {
+    render(<Button color="danger">Click</Button>);
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('bg-red-500');
+  });
+
+  it('combines color with a non-contained variant', () => {
+    render(
+      <Button variant="outlined" color="success">
+        Click
+      </Button>
+    );
+    const button = screen.getByRole('button');
+    expect(button.className).toContain('border-green-500');
+    expect(button.className).toContain('text-green-500');
+  });
+
+  // 5. Props 전달 테스트
   it('passes additional props to button element', () => {
     render(
       <Button data-testid="custom-button" aria-label="Custom Label">

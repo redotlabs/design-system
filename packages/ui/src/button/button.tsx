@@ -12,6 +12,7 @@ function Button({
   className,
   variant,
   size,
+  color,
   asChild = false,
   ...props
 }: ButtonProps) {
@@ -20,7 +21,7 @@ function Button({
     <Comp
       type={asChild ? undefined : 'button'}
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, color, className }))}
       {...props}
     />
   );

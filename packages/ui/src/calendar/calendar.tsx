@@ -210,6 +210,9 @@ function CalendarDayButton({
         className
       )}
       {...props}
+      // react-day-picker forwards the vestigial native `color` HTML attribute,
+      // which collides with Button's semantic `color` variant prop — drop it.
+      color={undefined}
     />
   );
 }

@@ -47,6 +47,22 @@ const meta: Meta<typeof Button> = {
       description: 'The size of the button',
       options: Object.keys(buttonVariantsOptions.variants.size),
     },
+    color: {
+      control: {
+        type: 'inline-radio',
+      },
+      defaultValue: buttonVariantsOptions.defaultVariants.color,
+      description: 'The color of the button',
+      table: {
+        type: {
+          summary: Object.keys(buttonVariantsOptions.variants.color).join(
+            ' | '
+          ),
+        },
+        defaultValue: { summary: buttonVariantsOptions.defaultVariants.color },
+      },
+      options: Object.keys(buttonVariantsOptions.variants.color),
+    },
     disabled: {
       control: {
         type: 'boolean',
@@ -96,6 +112,38 @@ export const Sizes = {
       <Button {...args} size="sm" />
       <Button {...args} size="md" />
       <Button {...args} size="lg" />
+    </div>
+  ),
+};
+
+export const Colors = {
+  args: {
+    children: 'Click Me',
+    size: buttonVariantsOptions.defaultVariants.size,
+  },
+  render: (args) => (
+    <div className="flex flex-col gap-6">
+      {(['contained', 'outlined', 'text'] as const).map((variant) => (
+        <div key={variant} className="space-y-2">
+          <h3 className="text-sm font-semibold text-gray-700 capitalize">
+            {variant}
+          </h3>
+          <div className="flex items-center gap-4">
+            {Object.keys(buttonVariantsOptions.variants.color).map((color) => (
+              <Button
+                {...args}
+                key={color}
+                variant={variant}
+                color={
+                  color as keyof typeof buttonVariantsOptions.variants.color
+                }
+              >
+                {color}
+              </Button>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   ),
 };

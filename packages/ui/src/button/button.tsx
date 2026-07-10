@@ -5,7 +5,9 @@ import { buttonVariants } from './button.variants';
 import { Slot } from '@radix-ui/react-slot';
 
 type ButtonVariants = VariantProps<typeof buttonVariants>;
-type ButtonProps = ComponentProps<'button'> &
+// Drop the deprecated native `color` HTML attribute so the semantic `color`
+// variant is the only `color` prop consumers see.
+type ButtonProps = Omit<ComponentProps<'button'>, 'color'> &
   ButtonVariants & { asChild?: boolean };
 
 function Button({
